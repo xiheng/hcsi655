@@ -1,0 +1,13 @@
+# which files to ignore
+
+# script related files
+*.pyc
+
+# vim junk
+.*.swp
+
+# LaTeX by-products
+*.aux
+*.bbl
+*.blg
+*.log
