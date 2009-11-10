@@ -12,7 +12,7 @@
 % \setlength{\parsep}{8pt}
 
 
-\title{ Some Title Here }
+\title{ Development Plan }
 
 \author{ Jeremy Kelley, Kyumin Lee, \& Xiheng Zhang }
 
@@ -20,19 +20,98 @@
 
 \maketitle
 
-\section{Section Title}
+\section{Development Plan}
 
-Put stuff here.  Put stuff here.  Put stuff here.  Put stuff here.  Put stuff
-here.  Put stuff here.  Put stuff here.  Put stuff here.  Put stuff here.  Put
-stuff here.  Put stuff here.  
+\subsection{ Application Environment and Development Tools }
 
-\subsection{Sub Section Title}
+\subsubsection{ Mobile Client }
 
-Put stuff here.  Put stuff here.  Put stuff here.  Put stuff here.  Put stuff
-here.  Put stuff here.  Put stuff here.  Put stuff here.  Put stuff here.  Put
-stuff here.  Put stuff here.  \cite{weka}
+Since the prototype is intended for the iPhone OS, there are few options for
+development environments.  The path of least resistance (and greatest
+productivity) is for the application to be written in Objective C, and built
+using Apple's iPhone SDK toolchain integrated into the Xcode IDE.  It is
+possible to develop iPhone applications outside of Xcode, using other text
+editors and foregoing the builtin debugging integration that Xcode offers, but
+to compile and link, one is still required to use the provided tools by Apple.
+For this reason, our team will focus on the Xcode environment and the full
+stack that it has to offer.  In particular, we will be using the following:
 
-% %%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item development workstations will run OSX
+\item Xcode
+\item iPhone 3G S
+\item iPhone Simulator
+\end{itemize}
+
+\subsubsection{ Web Service }
+
+In order for the applications on the client devices to share content, a
+centralized web service is required.  There are many options within this realm,
+however, for ease of development since time is short on this prototype, this
+web service will be built using the following:
+
+\begin{itemize}
+\item Python scripting language
+\item Django Web Framework
+\item Lighttpd HTTP Server
+\item MySQL Database
+\item JSON for data transport
+\end{itemize}
+
+This stack of tools has been widely utilized in numerous installations and in
+particular, the Python language has proven itself to be quite powerful, yet
+easy to learn.
+
+\subsubsection{ Version Control \& Source Code Management }
+
+In order to facilitate sharing our work, we have created a repository at
+GitHub\footnote{http://github.com}.  This allows us to use Git, a distributed
+version control system, for all of our created content.  Our source code,
+scripts, and even our papers (written in \LaTeX) will be stored in this shared
+repository.  This allows us, as a distributed team working in disparate
+locations, to share all content and stay up-to-date with others contributions.
+
+Git also provides issue tracking that we have begun using in an effort to track
+progress and discussion on multiple concurrent items.
+
+\subsection{ Development Milestones  }
+
+\begin{itemize}
+\item 17 Nov -- Storyboards and Lo-fi Prototypes
+\item 19 Nov -- Webservice completed and API locked for data transfer
+\item 23 Nov -- pre-Alpha ``Sketchable'' interface working on Sim with fabricated geo data
+\item 24 Nov -- Initial User Feedback incorporated into final designs
+\item 26 Nov -- Early ``Alpha'' version of the mobile client ready
+\item 1 Dec -- Prototype due
+
+\end{itemize}
+
+\subsection{ Application Architecture }
+
+The heart of the mobile application will be the integration of a live video
+feed overlaid by user contributed sketches for the current location of the
+device.  The application will rely on Apple's CoreLocation service to provide
+the location and orientation information in order to retrieve user content from
+the web service.  We will run an NSTimer that will create
+NSInvocationOperations at regular intervals to submit any user created content
+in the background during viewing and to retrieve any new content for the user's
+current geographic area.
+
+We intend to incorporate a simple user identity component using Twitter.  This
+will allow us to attach a user to a sketch without having to manage the
+identity infrastructure.  By having identity information attached to each
+contribution, we will also have the ability to allow users to filter based upon
+the user.
+
+There will be a tagging component, although it will be limited in this initial
+prototype.  The user will be able to create a set of tags that will be applied
+to sketches created after tag assignment.
+
+Finally, a map view will be provided which will indicate to the user sketches
+near to them, to allow for ``sketch tours'' or other artistic discoveries.
+
+
+%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{plain}
 \bibliography{../bibli} 
 \end{document}
