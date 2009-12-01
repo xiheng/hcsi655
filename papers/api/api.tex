@@ -1,0 +1,143 @@
+\documentclass{www2010-submission}
+
+\usepackage{graphicx}
+% \usepackage[left=2cm,top=1cm,right=3cm]{geometry}
+
+\begin{document}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.5ex plus 0.5ex minus 0.2ex}
+
+
+% \setlength{\parskip}{8pt}
+% \setlength{\parsep}{8pt}
+
+
+\title{ drawnTogether -- a collaborative approach to virtual graffiti }
+
+\author{ Jeremy Kelley, Kyumin Lee, \& Xiheng Zhang }
+
+\date{\today}
+
+\maketitle
+
+\section{ Web Server APIs }
+\subsection{login}
+This method is to authenticate a user¡¯s Twitter credential.
+\textbf{URL:} (domain name will be changed)
+
+http://drawnTogether.com/sketch/login
+
+\textbf{HTTP Method(s):}
+
+GET, POST
+
+\textbf{Parameters:}
+\begin{itemize}
+  \item username: Twitter username
+  \item password: Twitter password
+  \item deviceid: device id of mobile phone
+\end{itemize}
+
+\textbf{Example:}
+
+http://drawnTogether.com/sketch/login?
+
+username=abcd\&password=12345\&deviceid=2123456 
+
+\subsection{insert sketches to DB}
+This method is to insert sketches to DB.
+
+\subsubsection{insert sketches without tags to DB}
+\textbf{URL:} (domain name will be changed)
+
+http://drawnTogether.com/sketch/put/\emph{deviceid}
+
+\textbf{Device id:}
+
+Unique device id of mobile phone
+
+\textbf{HTTP Method(s):}
+
+GET, POST
+
+\textbf{Parameters:}
+\begin{itemize}
+  \item lat: latitude
+  \item long: longitude
+  \item alt: altitude
+  \item ori: orientation
+  \item pix: location of pixel in a device and color (sketch data) in the pixel. Each pixel and color information will be separated by colon(:).
+\end{itemize}
+
+\textbf{Example:}
+
+http://drawnTogether.com/sketch/put/2123456?
+
+lat=12.222\&long=22.4444\&alt=33.4444\&ori=11.444\&
+
+pix=1,2,1312313:3,4,565464 
+
+\subsubsection{insert sketches with tags to DB}
+\textbf{URL:} (domain name will be changed)
+
+http://drawnTogether.com/sketch/put/\emph{deviceid}
+
+\textbf{Device id:}
+
+Unique device id of mobile phone
+
+\textbf{HTTP Method(s):}
+
+GET, POST
+
+\textbf{Parameters:}
+\begin{itemize}
+  \item lat: latitude
+  \item long: longitude
+  \item alt: altitude
+  \item ori: orientation
+  \item pix: location of pixel in a device and color (sketch data) in the pixel. Each pixel and color information will be separated by colon(:).
+  \item tags: tag information of the sketch (pix). Each tag is separated by comma(,).
+\end{itemize}
+
+\textbf{Example:}
+
+http://drawnTogether.com/sketch/put/2123456?
+
+lat=12.222\&long=22.4444\&alt=33.4444\&ori=11.444\&
+
+pix=1,2,1312313:3,4,565464:\&tags=dog,apple 
+
+\subsection{get sketches from DB}
+Return sketch information in a location using json format
+
+\textbf{URL:} (domain name will be changed)
+
+http://drawnTogether.com/sketch/get/\emph{deviceid}
+
+\textbf{Device id:}
+
+Unique device id of mobile phone
+
+\textbf{HTTP Method(s):}
+
+GET, POST
+
+\textbf{Parameters:}
+\begin{itemize}
+  \item lat: latitude
+  \item long: longitude
+  \item alt: altitude
+  \item ori: orientation
+\end{itemize}
+
+\textbf{Example:}
+
+http://drawnTogether.com/sketch/get/2123456?
+
+lat=12.222\&long=22.4444\&alt=33.4444\&ori=11.444
+
+%%%%%%%%%%%%%%%%%%%
+% \bibliographystyle{plain}
+% \bibliography{../bibli}
+\end{document}
