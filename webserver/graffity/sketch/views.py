@@ -3,9 +3,9 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse, QueryDict
 from django.utils import simplejson
 from django.core.serializers import serialize
-import urllib2
-import twitter
+from graffity.sketch.twitter import Api
 from graffity.sketch.models import Person, Location, PixelColor
+import urllib2
 
 #url example: http://127.0.0.1:8000/sketch/login?username=abcd&password=12345&deviceid=2123456 (parameters can be transfered by Post method)
 def login(request):
@@ -13,7 +13,7 @@ def login(request):
     password = request.REQUEST["password"]
     deviceid = request.REQUEST["deviceid"]
     
-    api = twitter.Api(username = username, password = password)
+    api = Api(username = username, password = password)
     try: 
         messages = api.GetDirectMessages()
         #user = api.GetUser(username)
