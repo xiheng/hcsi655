@@ -100,4 +100,7 @@ def get(request, deviceid):
         pixelcols = PixelColor.objects.filter(location = l)
         json = serialize('json', pixelcols)
         return HttpResponse(json, mimetype = 'application/json')
-    
+
+def map(request):
+    location = 'college station' 
+    return render_to_response('sketch/map.html', {'location': location})       
