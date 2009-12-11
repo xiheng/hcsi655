@@ -6,4 +6,5 @@ urlpatterns = patterns('graffity.sketch.views',
     (r'^login/$', 'login'),
     (r'^put/(?P<deviceid>\w+)/$', 'put'),
     (r'^get/(?P<deviceid>\w+)/$', 'get'),
+    (r'^map/$', 'map'),
 )

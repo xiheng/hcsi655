@@ -66,6 +66,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'graffity.urls'
 
 TEMPLATE_DIRS = (
+    "/cygdrive/c/hcsi_final_project/graffity/mytemplates"
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
