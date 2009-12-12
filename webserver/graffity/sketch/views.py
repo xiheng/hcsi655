@@ -6,7 +6,8 @@ from django.core.serializers import serialize
 from graffity.sketch.twitter import Api
 from graffity.sketch.models import Person, Location, PixelColor
 import urllib2
-#from PIL import Image
+from PIL import Image, ImageDraw
+
 
 #url example: http://127.0.0.1:8000/sketch/login?username=abcd&password=12345&deviceid=2123456 (parameters can be transfered by Post method)
 def login(request):
@@ -114,24 +115,26 @@ def map(request):
     else:
         print 'location info exists'
             
-        #load image temporally
-        
-        #im = Image.open("image.bmp")
-        #print im.tostring()
         # create an empty set
         maparray = []
         for l in queryset:
             pixelcols = PixelColor.objects.filter(location = l)
+            #create image
+            image = Image.new("RGB", (480, 320), "white")
+            draw = ImageDraw.Draw(image)
+                        
             for pix in pixelcols:
-                dic = dict([('lat',l.latitude), ('long', l.longitude), ('alt', l.altitude), ('ori', l.orientation), ('pixcol', "/sketch/media/image.bmp"), ('tags', pix.tags)])
-                maparray.append(dic)
-                print l.latitude, l.longitude, l.altitude, l.orientation, pix.pixel_col, pix.tags;
+                #ToDo draw each pixel_col using draw.line and aggregate tags                                                                    
+                print l.latitude, l.longitude, l.altitude, l.orientation, pix.pixel_col, pix.tags
+                
+            draw.line([(52,80),(80,80)], fill = "black") #temporal usage
+            imagename = str(l.latitude) + str(l.longitude) + str(l.altitude) + str(l.orientation)#"image2"
+            image.save( "media/" + imagename + ".bmp", "BMP")
+            dic = dict([('lat',l.latitude), ('long', l.longitude), ('alt', l.altitude), ('ori', l.orientation), ('pixcol', "/sketch/media/" + imagename + ".bmp")])
+            maparray.append(dic)
                 
         #have to create image file
         return render_to_response('sketch/map.html', {'maparray': maparray})
-        
-        #return HttpResponse(json, mimetype = 'application/json')
-        
 
 
  
