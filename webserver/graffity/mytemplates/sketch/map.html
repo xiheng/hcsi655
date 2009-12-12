@@ -1,2 +1,51 @@
-<h1>{{ location }}</h1>
 
+ <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true_or_false&amp;key=ABQIAAAAoJqXQg7I7Qw6WEfo-UzsshT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQnHUd0FYnitwuW_UWOgakEVHD9xA" type="text/javascript"></script>
+    <script type="text/javascript">
+    
+    function initialize() {
+    	var message = ["This","is","the","secret","message"];
+
+
+      if (GBrowserIsCompatible()) {
+        var map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(30.615607,-96.340549), 14);
+        map.setUIToDefault();
+
+		    // Creates a marker at the given point
+		    // Clicking the marker will hide it
+		    function createMarker(latlng, number) {
+		      var marker = new GMarker(latlng);
+		      marker.value = number;
+		      GEvent.addListener(marker,"click", function() {
+		      			      			      	
+		        var myHtml = "<img src='" + number + "'><br/>";
+		        map.openInfoWindowHtml(latlng, myHtml);
+		        
+		        
+		      });
+		      return marker;
+			}
+		
+		    // Add markers to the map at random locations
+		    // Note that we don't add the secret message to the marker's instance data
+		    var bounds = map.getBounds();
+		    var southWest = bounds.getSouthWest();
+		    var northEast = bounds.getNorthEast();
+		    var lngSpan = northEast.lng() - southWest.lng();
+		    var latSpan = northEast.lat() - southWest.lat();
+		    	{% for markerdata in maparray %}
+					    var latlng = new GLatLng({{ markerdata.lat}}, {{ markerdata.long }});
+					    map.addOverlay(createMarker(latlng, '{{ markerdata.pixcol }}' ));					    
+  				{% endfor %}		      								
+        
+      }
+    }
+
+    </script>
+
+<body onload="initialize()" onunload="GUnload()">
+
+
+
+    <div id="map_canvas" style="width: 800px; height: 600px"></div>
+  </body>

@@ -6,6 +6,7 @@ from django.core.serializers import serialize
 from graffity.sketch.twitter import Api
 from graffity.sketch.models import Person, Location, PixelColor
 import urllib2
+#from PIL import Image
 
 #url example: http://127.0.0.1:8000/sketch/login?username=abcd&password=12345&deviceid=2123456 (parameters can be transfered by Post method)
 def login(request):
@@ -102,5 +103,36 @@ def get(request, deviceid):
         return HttpResponse(json, mimetype = 'application/json')
 
 def map(request):
-    location = 'college station' 
-    return render_to_response('sketch/map.html', {'location': location})       
+    #if the location info does not exist in DB, return empty result. Otherwise, extract pixelcolors from DB
+    #queryset = Location.objects.filter(latitude = latitude, longitude = longitude, altitude = altitude, orientation = orientation)
+    queryset = Location.objects.all()
+    
+    print len(queryset)
+    if len(queryset) == 0:        
+        print 'no result'
+        return HttpResponse("no sketch data because there is no location info")
+    else:
+        print 'location info exists'
+            
+        #load image temporally
+        
+        #im = Image.open("image.bmp")
+        #print im.tostring()
+        # create an empty set
+        maparray = []
+        for l in queryset:
+            pixelcols = PixelColor.objects.filter(location = l)
+            for pix in pixelcols:
+                dic = dict([('lat',l.latitude), ('long', l.longitude), ('alt', l.altitude), ('ori', l.orientation), ('pixcol', "/sketch/media/image.bmp"), ('tags', pix.tags)])
+                maparray.append(dic)
+                print l.latitude, l.longitude, l.altitude, l.orientation, pix.pixel_col, pix.tags;
+                
+        #have to create image file
+        return render_to_response('sketch/map.html', {'maparray': maparray})
+        
+        #return HttpResponse(json, mimetype = 'application/json')
+        
+
+
+ 
+        
