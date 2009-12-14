@@ -35,7 +35,7 @@
 		    var latSpan = northEast.lat() - southWest.lat();
 		    	{% for markerdata in maparray %}
 					    var latlng = new GLatLng({{ markerdata.lat}}, {{ markerdata.long }});
-					    map.addOverlay(createMarker(latlng, '{{ markerdata.pixcol }}' ));					    
+					    map.addOverlay(createMarker(latlng, '{{ markerdata.image }}' ));					    
   				{% endfor %}		      								
         
       }

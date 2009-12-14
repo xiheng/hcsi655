@@ -140,19 +140,21 @@ def map(request):
         # create an empty set
         maparray = []
         for l in queryset:
-            pixelcols = PixelColor.objects.filter(location = l)
+            strokes = Stroke.objects.filter(location = l)
             #create image
             image = Image.new("RGB", (480, 320), "white")
             draw = ImageDraw.Draw(image)
 
-            for pix in pixelcols:
+            for stroke in strokes:
                 #ToDo draw each pixel_col using draw.line and aggregate tags
-                print l.latitude, l.longitude, l.altitude, l.orientation, pix.pixel_col, pix.tags
-
-            draw.line([(52,80),(80,80)], fill = "black") #temporal usage
-            imagename = str(l.latitude) + str(l.longitude) + str(l.altitude) + str(l.orientation)#"image2"
+                #draw.line([(52,80),(80,80)], fill = "black") #temporal usage
+                stroke_points = json_loads(stroke.points)
+                print stroke_points[0][0], stroke_points[0][1], stroke_points[1][0], stroke_points[1][1] 
+                draw.line([(stroke_points[0][0],stroke_points[0][1]),(stroke_points[1][0],stroke_points[1][1])], fill = "#" + stroke.color) #temporal usage
+                print l.latitude, l.longitude, l.altitude, stroke.color, stroke.points #stroke.tags
+            imagename = str(l.latitude) + str(l.longitude) + str(l.altitude)#"image2"
             image.save( "media/" + imagename + ".bmp", "BMP")
-            dic = dict([('lat',l.latitude), ('long', l.longitude), ('alt', l.altitude), ('ori', l.orientation), ('pixcol', "/sketch/media/" + imagename + ".bmp")])
+            dic = dict([('lat',l.latitude), ('long', l.longitude), ('alt', l.altitude), ('image', "/sketch/media/" + imagename + ".bmp")])
             maparray.append(dic)
 
         #have to create image file
