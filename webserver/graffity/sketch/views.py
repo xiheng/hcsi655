@@ -90,7 +90,7 @@ def put(request, deviceid):
     # we're just going to fake this for now.  XXX 
     person, _created = Person.objects.get_or_create(deviceid = deviceid)
     if _created:
-        person.name = 'fake'
+        person.name = "fake_" + deviceid  # faking this for now
         person.save()
 
     # let's build a points list from the list they passed in.  it doubles up
