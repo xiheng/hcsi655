@@ -71,21 +71,23 @@ digital sense.
 \category{H.5.2}{Information Interfaces and Presentation}{Miscellaneous}[Optional sub-category]
 
 \section{Introduction}
+People are intended to do funny things together. Sometimes, they also want others' help to finish their jobs. But what if they cannot turn up in the same place at the same time, but they are still eager to know what others are seeing or think about at this position? Our collaborative artistic application is intended to group people in the same location but not necessarily at the same time to work together. The work is drawing. They will make sketches collaboratively. For example, Alice and Bob can make a sketch of a building in different time and view the sketch together.
 
+The purpose of this application is to help users collaborate and communicate better with others in the same network, or let actors be more aware of what happened around based on context information and more involved in social activities. 
 
 \section{Approach}
-We are going to develop a collaborative artistic application for the iPhone 3GS. This application allows users raw sketches on their iPhone and upload the sketch as well as their global position and orientation at that moment, to a server. The sketch can be anything the user wants to draw. It can be the view he/she is seeing, or the idea he/she is thinking about, or his mood and his feeling. The purpose of this application is to help users collaborate and communicate better with others in the same network, or let actors be more aware of what happened around based on context information and more involved in social activities. The context information contains both temporal and spatial information. Each sketch will be timestamped at the point it is uploaded to the server.
+We are going to develop a collaborative artistic application for the iPhone 3GS. This application allows users draw sketches on their iPhone and upload the sketch as well as their global position and orientation at that moment, to a server. The sketch can be anything the user wants to draw. It can be the view he/she is seeing, or the idea he/she is thinking about, or his mood and his feeling. The context information accompanied by the sketch contains both temporal and spatial information. Each sketch will be timestamped at the point it is uploaded to the server.
 
 The spatial data has:
 \begin{enumerate}
 \item the current position the user locates, indicated by x (latitude), y
 	(longitude) and z (altitude) available via GPS in the device.
 \item the current orientation the user faces available via the magnetic compass
-	within the device.  
+	within the device.  The orientation is important because view would be affected given different
+         orientation.
 \end{enumerate}
 
-The orientation is important because view would be affected given different
-orientation.
+
 
 \begin{figure}
 \centering
@@ -130,7 +132,7 @@ The specific activities users will conduct using our system include:
 	in Figure \ref{fig:map}
 \end{enumerate}
 
-Here is an initial description of the components we will need to prototype for
+Here is a list of the components we use to prototype for
 the system (hardware and software)
 
 \begin{figure}
@@ -152,11 +154,18 @@ the system (hardware and software)
         \item Operating system: Linux
         \item Web server: Lighttpd
         \item Web application: custom service build using Django framework
-        \item Database: MySQL
+        \item Database: SQLite
         \item Code management tool during development: git
         \end{itemize}
-\end{enumerate}
 
+
+Besides, we build up a google map with marker of sketches on a webpage. This enables users view  sketches globally and have a sense of the sketch distribution directly.
+\item Google Map
+   \begin{itemize}
+   \item google map api
+   \item javascript
+   \end{itemize}
+   \end{enumerate}
 
 
 \section{design process}
@@ -599,6 +608,7 @@ simultaneously edit presentation text or  sketch.
 \section{discussion}
 
 \section{conclusion and future work}
+The tests shows people can draw on their device smoothly and effectively. They feel happy when finding they can make sketch together with others on a small device individually. As it is an almost real-time application, the device will show the newly strokes almost immediately after the strokes are created. One can also view the entire map with sketches in multiply places in google map, from where by clicking a marker, a window with sketch and tags will pop up. Later, we may add search function to search sketches in certain locations.
 
 
 \bibliographystyle{abbrv}
