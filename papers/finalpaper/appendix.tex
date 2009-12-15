@@ -1,0 +1,91 @@
+\section{Web Server APIs}
+\subsection{Login}
+This method is to authenticate a user¡¯s Twitter credential.
+\textbf{{\small URL: }}
+
+http://infolab.tamu.edu/api/graffiti/login
+
+\textbf{{\small HTTP Method(s):}}
+
+GET, POST
+
+\textbf{{\small Parameters:}}
+\begin{itemize}
+  \item u: Twitter username
+  \item p: Twitter password
+  \item d: device id of mobile phone
+\end{itemize}
+
+\textbf{{\small Example:}}
+
+http://infolab.tamu.edu/api/graffiti/login?u=user\&p=pass
+
+\&d=2123456
+
+\subsection{Insert sketches to DB}
+This method is to insert sketches to DB.
+
+\textbf{{\small URL:}}
+
+http://infolab.tamu.edu/api/graffiti/put/\emph{deviceid}
+
+\textbf{{\small Device id:}}
+
+Unique device id of mobile phone
+
+\textbf{{\small HTTP Method(s):}}
+
+GET, POST
+
+\textbf{{\small Parameters:}}
+\begin{itemize}
+  \item lat: latitude
+  \item lon: longitude
+  \item s: stroke points
+  \item c: color  
+  %\item tags: tag information of the sketch (pix). Each tag is separated by comma(,).
+\end{itemize}
+
+\textbf{{\small Example:}}
+
+http://infolab.tamu.edu/api/graffiti/put/2123456?
+
+lat=12.22\&lon=22.44\&s=[[44,34],[80,33]]\&c=aabbccdd
+
+\subsection{Get sketches from DB}
+Return sketch information in a location using json format
+
+\textbf{{\small URL:}}
+
+http://infolab.tamu.edu/api/graffiti/strokes/\emph{lat}/\emph{lon}
+
+\textbf{{\small Lat:}}
+
+latitude
+
+\textbf{{\small Lon:}}
+
+longitude
+
+\textbf{{\small HTTP Method(s):}}
+
+GET, POST
+
+\textbf{{\small Parameters:}}
+\begin{itemize}
+  \item c: creator name
+  %\item dist: creator name
+\end{itemize}
+
+\textbf{{\small Example:}}
+
+http://infolab.tamu.edu/api/graffiti/strokes/12.22/22.44?
+
+c=nod
+
+\subsection{Get map information}
+Return sketch information to display on the map
+
+\textbf{{\small URL:}}
+
+http://infolab.tamu.edu/api/graffiti/map

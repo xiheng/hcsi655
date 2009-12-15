@@ -92,11 +92,19 @@ Just like common social networks, users have his/her own networks in our
 system. i.e., one may only interested in his/her friends' sketches or sketches
 based on their tagged metadata.  It is expected that the amount of created
 sketches could quickly overload our small interface.  For this reason, we are
-initially allowing sketches to be filtered based on tags and their creator.
+initially allowing sketches to be filtered based on tags and their creator, as
+seen in Figure \ref{fig:settings}.
 
 \begin{figure}
 \centering
-\includegraphics[width=.35\textwidth]{draw.pdf}
+\includegraphics[width=.3\textwidth]{settings.pdf}
+\caption{A mockup of the proposed settings interface}
+\label{fig:settings}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=.3\textwidth]{draw.pdf}
 \caption{A mockup of the proposed drawing interface}
 \label{fig:draw}
 \end{figure}
@@ -121,34 +129,6 @@ The specific activities users conduct using our system include:
 	in Figure \ref{fig:map}
 \end{enumerate}
 
-Here is a list of the components we use to prototype for
-the system (hardware and software)
-
-\begin{enumerate}
-\item Client interface
-        \begin{itemize}
-        \item iPhone 3GS
-        \item  Sketch application
-        \end{itemize}
-
-\item Web service
-        \begin{itemize}
-        \item Operating system: Linux
-        \item Web server: Lighttpd
-        \item Web application: custom service build using Django framework
-        \item Database: MySQL
-        \item Code management tool during development: git
-        \end{itemize}
-
-
-Besides, we build up a google map with markers of sketches on a webpage. This enables users view  sketches globally and have a sense of the sketch distribution directly.
-
-\item Google Map
-   \begin{itemize}
-   \item google map api
-   \item javascript
-   \end{itemize}
-   \end{enumerate}
 
 \section{design process}
 
@@ -288,7 +268,7 @@ provided a semi-structured questionnaire that our interviewers were to follow.
 
 This questionnaire was divided up into multiple phases.
 
-\subsubsection{ Introduction }
+\subsubsection{Introduction}
 
 This phase consists of multiple steps:
 \begin{itemize}
@@ -407,11 +387,20 @@ Are there any recommendations you would make to improve your experience?
 Two individuals suggested moving the color palette from the setting page to the
 bottom of the drawing view. This would have the effect of drastically reducing the interaction required for a meta task of changing the drawing color.  Several
 users changed colors at least twice, so the benefits of this change seem
-beneficial.  For the final two interviews, this change was adopted and proven
+beneficial.  For the final two interviews, this change was adopted, as
+seen in Figure \ref{fig:draw2}, and proven
 to be a valid enhancement immediately.  Person G used the modified drawing view
 and changed colors five times while creating a sketch.  Person H changed colors
 four times.  This was a definite, measurable improvement and allowed for a more
 refined workflow for task completion.
+
+\begin{figure}
+\centering
+\includegraphics[width=.3\textwidth]{draw2.pdf}
+\caption{A mockup of the modifed drawing interface}
+\label{fig:draw2}
+\end{figure}
+
 
 The sacrifice of reduced drawing area was mitigated by removing the top bar
 completely in the drawing view and adding navigational elements to the bottom
@@ -439,24 +428,52 @@ application for their personal use.
 
 
 
-\section{Implementation}
+\section{Development}
 
-The scope of this project and the tight deadlines means that team communication
-and productivity is of the utmost importance.
+\subsection{System Architecture}
 
-\subsection{ Application Environment and Development Tools }
+The heart of the mobile application is the integration of a live video
+feed from the device's camera overlaid by user contributed sketches for the
+current location of the device.  The application relies on Apple's
+CoreLocation service to provide the location and orientation information in
+order to retrieve user content from the web service.  We run an NSTimer
+that creates NSInvocationOperations at regular intervals to submit any user
+created content in the background during viewing and to retrieve any new
+content for the user's current geographic area.
 
-\subsubsection{ Mobile Client }
+We incorporate a simple user identity component using Twitter. This allows us to attach a user to a sketch without having to manage the identity infrastructure.  By having identity information attached to each
+contribution, we also have the ability to allow users to filter based upon
+the user.
 
-Since the prototype is intended for the iPhone OS, there are few options for
+There is a tagging component, although it is limited in this initial
+prototype.  The user is able to create a set of tags that is applied
+to sketches created after tag assignment.
+
+Finally, a map view is provided. It indicates to the user sketches
+near to them, to allow for ``sketch tours'' or other artistic discoveries.
+
+Figure \ref{fig:arch} presents our proposed system architecture. Mobile users can draw sketches together despite their lack of temporal co-location. For example, user A drew sketch in a certain location (point$_{0}$) at t$_{0}$ and left the location. The user A's drawing has been stored into database through web service (web server). Sometime later, user B came to the location (point$_{0}$) and adds some sketches into the previous sketch drawn by user A at t$_{1}$. Web users can view what people has drawn by their web browser which accesses to our web service (web server). Each marker in our map page indicates there are sketches in the location.
+
+\begin{figure}
+\centering
+\includegraphics[width=.5\textwidth]{architecture.pdf}
+\caption{The proposed system architecture}
+\label{fig:arch}
+\end{figure}
+
+\subsection{Application Environment and Development Tools}
+
+\subsubsection{Mobile Client}
+
+Since the application is intended for the iPhone OS, there are few options for
 development environments.  The path of least resistance (and greatest
 productivity) is for the application to be written in Objective C, and built
 using Apple's iPhone SDK toolchain integrated into the Xcode IDE.  It is
 possible to develop iPhone applications outside of Xcode, using other text
 editors and foregoing the builtin debugging integration that Xcode offers, but
 to compile and link, one is still required to use the provided tools by Apple.
-For this reason, our team will focus on the Xcode environment and the full
-stack that it has to offer.  In particular, we will be using the following:
+For this reason, we focused on the Xcode environment and the full
+stack that it has to offer.  In particular, we has used the following:
 
 \begin{itemize}
 \item development workstations will run OSX
@@ -465,12 +482,10 @@ stack that it has to offer.  In particular, we will be using the following:
 \item iPhone Simulator
 \end{itemize}
 
-\subsubsection{ Web Service }
+\subsubsection{Web Service}
 
 In order for the applications on the client devices to share content, a
-centralized web service is required.  There are many options within this realm,
-however, for ease of development since time is short on this prototype, this
-web service will be built using the following:
+centralized web service is required. This web service was built using the following:
 
 \begin{itemize}
 \item Python scripting language
@@ -480,64 +495,25 @@ web service will be built using the following:
 \item JSON for data transport
 \end{itemize}
 
-This stack of tools has been widely utilized in numerous installations and in
-particular, the Python language has proven itself to be quite powerful, yet
-easy to learn.
+ We built up a google map with markers of sketches on a web page. This enables users view sketches globally and have a sense of the sketch distribution directly.
 
-\subsubsection{ Version Control \& Source Code Management }
+\begin{itemize}
+\item google map api
+\item javascript
+\end{itemize}
+
+   
+\subsubsection{Version Control \& Source Code Management}
 
 In order to facilitate sharing our work, we have created a repository at
 GitHub\footnote{http://github.com}.  This allows us to use Git, a distributed
 version control system, for all of our created content.  Our source code,
-scripts, and even our papers (written in \LaTeX) will be stored in this shared
+scripts, and even our papers (written in \LaTeX) has been stored in this shared
 repository.  This allows us, as a distributed team working in disparate
 locations, to share all content and stay up-to-date with others contributions.
 
 Git also provides issue tracking that we have begun using in an effort to track
 progress and discussion on multiple concurrent items.
-
-\subsection{ Development Milestones  }
-
-\begin{itemize}
-\item 17 Nov -- Storyboards and Lo-fi Prototypes
-\item 19 Nov -- Webservice completed and API locked for data transfer
-\item 23 Nov -- pre-Alpha ``Sketchable'' interface working on Sim with fabricated geo data
-\item 24 Nov -- Initial User Feedback incorporated into final designs
-\item 26 Nov -- Early ``Alpha'' version of the mobile client ready
-\item 1 Dec -- Prototype due
-
-\end{itemize}
-
-\subsection{ Application Architecture }
-
-The heart of the mobile application will be the integration of a live video
-feed from the device's camera overlaid by user contributed sketches for the
-current location of the device.  The application will rely on Apple's
-CoreLocation service to provide the location and orientation information in
-order to retrieve user content from the web service.  We will run an NSTimer
-that will create NSInvocationOperations at regular intervals to submit any user
-created content in the background during viewing and to retrieve any new
-content for the user's current geographic area.
-
-We intend to incorporate a simple user identity component using Twitter.  This
-will allow us to attach a user to a sketch without having to manage the
-identity infrastructure.  By having identity information attached to each
-contribution, we will also have the ability to allow users to filter based upon
-the user.
-
-There will be a tagging component, although it will be limited in this initial
-prototype.  The user will be able to create a set of tags that will be applied
-to sketches created after tag assignment.
-
-Finally, a map view will be provided which will indicate to the user sketches
-near to them, to allow for ``sketch tours'' or other artistic discoveries.
-
-\begin{figure}
-\centering
-\includegraphics[width=.45\textwidth]{arch.pdf}
-\caption{A simplified diagram showing client communications}
-\label{fig:arch}
-\end{figure}
 
 \section{evaluation}
 
@@ -562,8 +538,8 @@ know what has happened in a certain location.
 
 Bast\'{e}a-Forte and Yen \cite{brainstorming:marcello} presents a collaborative
 sketching tool. Each user has a Tablet PC to draw some sketches and to view
-shared sketches. Each userÕs drawling is synchronized, so that users can view
-the same drawling. The collaborative sketching tool helps each userÕs
+shared sketches. Each user's drawling is synchronized, so that users can view
+the same drawling. The collaborative sketching tool helps each user's
 contribution is equalized although it reduces total number of sketches. Our
 application enables users to collaborate drawing no matter what their
 relationship is.
@@ -600,5 +576,9 @@ The evaluation results show people can draw sketches on their device smoothly an
 
 \bibliographystyle{abbrv}
 \bibliography{sample}
+
+\newpage
+\appendix
+\input appendix.tex
 
 \end{document}
