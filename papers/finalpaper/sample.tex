@@ -31,7 +31,7 @@ breaklinks=true,
 \setlength{\pdfpageheight}{\paperheight}
 \setlength{\pdfpagewidth}{\paperwidth}
 
-% use this command to override the default ACM copyright statement 
+% use this command to override the default ACM copyright statement
 % (e.g. for preprints). Remove for camera ready copy.
 \toappear{Submitted for review to CHI 2009.}
 
@@ -66,14 +66,14 @@ increasing when they can contribute to something permanently, even in the
 digital sense.
 \end{abstract}
 
-\keywords{ sketch, collaboration, interaction, location awareness} 
+\keywords{ sketch, collaboration, interaction, location awareness}
 
 \category{H.5.2}{Information Interfaces and Presentation}{Miscellaneous}[Optional sub-category]
 
 \section{Introduction}
-People are intended to do funny things together. Sometimes, they also want others' help to finish their jobs. But what if they cannot turn up in the same place at the same time, but they are still eager to know what others are seeing or think about at this position? Our collaborative artistic application is intended to group people in the same location but not necessarily at the same time to work together. The work is drawing. They will make sketches collaboratively. For example, Alice and Bob can make a sketch of a building in different time and view the sketch together.
+People are intended to do funny things together. Sometimes, they also want others' help to finish their jobs. But what if they cannot turn up in the same place at the same time, but they are still eager to know what others are seeing or think about at this position? Our collaborative artistic application is intended to group people in the same location but not necessarily at the same time to work together. The work is drawing. They make sketches collaboratively. For example, Alice and Bob can make a sketch of a building in different time and view the sketch together.
 
-The purpose of this application is to help users collaborate and communicate better with others in the same network, or let actors be more aware of what happened around based on context information and more involved in social activities. 
+The purpose of this application is to help users collaborate and communicate better with others in the same network, or let users be more aware of what happened around based on context information and more involved in social activities.
 
 \section{Approach}
 We develop a collaborative artistic application for the iPhone 3GS. This application allows users draw sketches on their iPhone 3GS and upload the sketch as well as their global position and orientation at that moment, to a server. The sketch can be anything the user wants to draw. It can be the view he/she is seeing, or the idea he/she is thinking about, or his mood and feeling. The context information accompanied by the sketch uploaded to server together contains both temporal and spatial information. Each sketch is timestamped at the point it is uploaded to the server.
@@ -92,11 +92,19 @@ Just like common social networks, users have his/her own networks in our
 system. i.e., one may only interested in his/her friends' sketches or sketches
 based on their tagged metadata.  It is expected that the amount of created
 sketches could quickly overload our small interface.  For this reason, we are
-initially allowing sketches to be filtered based on tags and their creator.
+initially allowing sketches to be filtered based on tags and their creator, as
+seen in Figure \ref{fig:settings}.
 
 \begin{figure}
 \centering
-\includegraphics[width=.35\textwidth]{draw.pdf}
+\includegraphics[width=.3\textwidth]{settings.pdf}
+\caption{A mockup of the proposed settings interface}
+\label{fig:settings}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=.3\textwidth]{draw.pdf}
 \caption{A mockup of the proposed drawing interface}
 \label{fig:draw}
 \end{figure}
@@ -108,7 +116,7 @@ initially allowing sketches to be filtered based on tags and their creator.
 \label{fig:map}
 \end{figure}
 
-The specific activities users will conduct using our system include:
+The specific activities users conduct using our system include:
 \begin{enumerate}
 \item Hold iphone in hand, stay at any location GPS can track.
 \item On the iphone screen, make some sketch as seen in Figure \ref{fig:draw}. Users can select color (red, yellow, green, blue) from the palette at the bottom of the screen.
@@ -121,34 +129,6 @@ The specific activities users will conduct using our system include:
 	in Figure \ref{fig:map}
 \end{enumerate}
 
-Here is a list of the components we use to prototype for
-the system (hardware and software)
-
-\begin{enumerate}
-\item Client interface
-        \begin{itemize}
-        \item iPhone 3GS
-        \item  Sketch application
-        \end{itemize}
-
-\item Web service
-        \begin{itemize}
-        \item Operating system: Linux
-        \item Web server: Lighttpd
-        \item Web application: custom service build using Django framework
-        \item Database: SQLite
-        \item Code management tool during development: git
-        \end{itemize}
-
-
-Besides, we build up a google map with markers of sketches on a webpage. This enables users view  sketches globally and have a sense of the sketch distribution directly.
-
-\item Google Map
-   \begin{itemize}
-   \item google map api
-   \item javascript
-   \end{itemize}
-   \end{enumerate}
 
 \section{design process}
 
@@ -170,7 +150,7 @@ other tangents concerning the topic:
 \item Can you list any devices you have used for drawing besides paper?
 \item Have you used any drawing software before?
 	\begin{itemize}
-	\item If yes, which tool have you used and how often have you used it? 
+	\item If yes, which tool have you used and how often have you used it?
 	\item Would you choose to use Paint or Photoshop if familiar with both?
 	\end{itemize}
 \item Do you prefer art creation on paper or via digital means?  Why?
@@ -194,7 +174,7 @@ to a certain location.
 
 One of a the respondents, an economics student of Chinese origins, has never used an
 iPhone before.  Yet, she is very interested in drawing and painting.  She
-mentioned highly enjoying drawing on a small toy board which has an eraser as 
+mentioned highly enjoying drawing on a small toy board which has an eraser as
 a child.  She randomly uses the Windows Paint application, as well.  Most often
 though, she uses analysis software, such as SPSS to draw professional diagrams.
 When questioned about pure artistic endeavors, she expressed a high preference
@@ -207,7 +187,7 @@ the question about drawing on a screen and appearing on a building was
 broached, she replied that she would like to draw something related to her
 surroundings and that she would care about others sketches.  In particular, she
 remarked, ``That's one aspect of collaboration, right? First, I care about my
-friends' drawing. Then people who share the same interests with me.'' 
+friends' drawing. Then people who share the same interests with me.''
 When our intended application was finally revealed, she said she would care
 more about what people around her were drawing.
 
@@ -223,7 +203,7 @@ creations.
 
 \subsection{Storyboards}
 We can apply our application to various scenarios. In this section, we show two
-of them.  Storyboards for the intended applicaiton 
+of them.
 
 \subsubsection{Scenario 1: collaborative drawing}
 
@@ -265,9 +245,9 @@ position.  This can be weakly seen in Figure \ref{fig:s2}.
 
 
 
-\section{User Study 1}
+\section{User Study}
 \subsection{Interviewees}
-We conducted nine people:
+We conducted eight people:
 
 \begin{itemize}
 \item (A) male, an iphone 3G S user
@@ -288,7 +268,7 @@ provided a semi-structured questionnaire that our interviewers were to follow.
 
 This questionnaire was divided up into multiple phases.
 
-\subsubsection{ Introduction }
+\subsubsection{Introduction}
 
 This phase consists of multiple steps:
 \begin{itemize}
@@ -305,11 +285,11 @@ system has not been officially ``placed in their hands'' yet.
 
 \subsection{Facilitation}
 
-In order gather information about usage, we will physically hand the users a
+In order gather information about usage, we physically hand the users a
 lo-fi representation of the drawnTogether interface in the form of a tangible,
 translucent enclosure with cards that can swap out to represent the varying
 views of the application.  When the user ``navigates'' between the views, the
-interviewer will act as the computer and move the cards for the user.  The
+interviewer acts as the computer and move the cards for the user.  The
 benefits of this are numerous, but primarily, it allows us to iteratively
 improve the interface and pilot new versions in a much faster way than
 implementing the changes in software first.
@@ -328,7 +308,7 @@ application?
 \end{quote}
 
 Most respondents actually felt the application to be quite interesting.
-Respondent B, however, felt that it's merely a ``funny application'', and doubted if 
+Respondent B, however, felt that it's merely a ``funny application'', and doubted if
 there would be enough situations for the system to be used.   He did provide
 one possible  scenario. Imagine a group of architecture students
 enter into one building to make a sketch of the inside structure of this
@@ -388,7 +368,7 @@ What pieces of information do you gather from this view?
 
 Once on the map, Person G mentioned ``Oh, I can see where other users sketches
 are.  Cool''.  This was very satisfying to the researcher that the primary and
-immediate purpose of the map was summed up so well.  User A asked, ``Can you 
+immediate purpose of the map was summed up so well.  User A asked, ``Can you
 show the sketches actual sketches from different locations on the map? In a
 pop-up window?''
 
@@ -405,14 +385,22 @@ Are there any recommendations you would make to improve your experience?
 \end{quote}
 
 Two individuals suggested moving the color palette from the setting page to the
-bottom of the drawing view.  This would have the effect of drastically reducing
-the interaction required for a meta task of changing the drawing color.  Several
+bottom of the drawing view. This would have the effect of drastically reducing the interaction required for a meta task of changing the drawing color.  Several
 users changed colors at least twice, so the benefits of this change seem
-beneficial.  For the final two interviews, this change was adopted and proven
+beneficial.  For the final two interviews, this change was adopted, as
+seen in Figure \ref{fig:draw2}, and proven
 to be a valid enhancement immediately.  Person G used the modified drawing view
 and changed colors five times while creating a sketch.  Person H changed colors
 four times.  This was a definite, measurable improvement and allowed for a more
 refined workflow for task completion.
+
+\begin{figure}
+\centering
+\includegraphics[width=.3\textwidth]{draw2.pdf}
+\caption{A mockup of the modifed drawing interface}
+\label{fig:draw2}
+\end{figure}
+
 
 The sacrifice of reduced drawing area was mitigated by removing the top bar
 completely in the drawing view and adding navigational elements to the bottom
@@ -436,28 +424,56 @@ from a ``fresh creation''.
 \end{itemize}
 
 In closing, almost all participants expressed an interest in getting this
-application for their personal use.  
+application for their personal use.
 
 
 
-\section{Implementation}
+\section{Development}
 
-The scope of this project and the tight deadlines means that team communication
-and productivity is of the utmost importance.
+\subsection{System Architecture}
 
-\subsection{ Application Environment and Development Tools }
+The heart of the mobile application is the integration of a live video
+feed from the device's camera overlaid by user contributed sketches for the
+current location of the device.  The application relies on Apple's
+CoreLocation service to provide the location and orientation information in
+order to retrieve user content from the web service.  We run an NSTimer
+that creates NSInvocationOperations at regular intervals to submit any user
+created content in the background during viewing and to retrieve any new
+content for the user's current geographic area.
 
-\subsubsection{ Mobile Client }
+We incorporate a simple user identity component using Twitter. This allows us to attach a user to a sketch without having to manage the identity infrastructure.  By having identity information attached to each
+contribution, we also have the ability to allow users to filter based upon
+the user.
 
-Since the prototype is intended for the iPhone OS, there are few options for
+There is a tagging component, although it is limited in this initial
+prototype.  The user is able to create a set of tags that is applied
+to sketches created after tag assignment.
+
+Finally, a map view is provided. It indicates to the user sketches
+near to them, to allow for ``sketch tours'' or other artistic discoveries.
+
+Figure \ref{fig:arch} presents our proposed system architecture. Mobile users can draw sketches together despite their lack of temporal co-location. For example, user A drew sketch in a certain location (point$_{0}$) at t$_{0}$ and left the location. The user A's drawing has been stored into database through web service (web server). Sometime later, user B came to the location (point$_{0}$) and adds some sketches into the previous sketch drawn by user A at t$_{1}$. Web users can view what people has drawn by their web browser which accesses to our web service (web server). Each marker in our map page indicates there are sketches in the location.
+
+\begin{figure}
+\centering
+\includegraphics[width=.5\textwidth]{architecture.pdf}
+\caption{The proposed system architecture}
+\label{fig:arch}
+\end{figure}
+
+\subsection{Application Environment and Development Tools}
+
+\subsubsection{Mobile Client}
+
+Since the application is intended for the iPhone OS, there are few options for
 development environments.  The path of least resistance (and greatest
 productivity) is for the application to be written in Objective C, and built
 using Apple's iPhone SDK toolchain integrated into the Xcode IDE.  It is
 possible to develop iPhone applications outside of Xcode, using other text
 editors and foregoing the builtin debugging integration that Xcode offers, but
 to compile and link, one is still required to use the provided tools by Apple.
-For this reason, our team will focus on the Xcode environment and the full
-stack that it has to offer.  In particular, we will be using the following:
+For this reason, we focused on the Xcode environment and the full
+stack that it has to offer.  In particular, we has used the following:
 
 \begin{itemize}
 \item development workstations will run OSX
@@ -466,12 +482,10 @@ stack that it has to offer.  In particular, we will be using the following:
 \item iPhone Simulator
 \end{itemize}
 
-\subsubsection{ Web Service }
+\subsubsection{Web Service}
 
 In order for the applications on the client devices to share content, a
-centralized web service is required.  There are many options within this realm,
-however, for ease of development since time is short on this prototype, this
-web service will be built using the following:
+centralized web service is required. This web service was built using the following:
 
 \begin{itemize}
 \item Python scripting language
@@ -481,64 +495,25 @@ web service will be built using the following:
 \item JSON for data transport
 \end{itemize}
 
-This stack of tools has been widely utilized in numerous installations and in
-particular, the Python language has proven itself to be quite powerful, yet
-easy to learn.
+ We built up a google map with markers of sketches on a web page. This enables users view sketches globally and have a sense of the sketch distribution directly.
 
-\subsubsection{ Version Control \& Source Code Management }
+\begin{itemize}
+\item google map api
+\item javascript
+\end{itemize}
+
+   
+\subsubsection{Version Control \& Source Code Management}
 
 In order to facilitate sharing our work, we have created a repository at
 GitHub\footnote{http://github.com}.  This allows us to use Git, a distributed
 version control system, for all of our created content.  Our source code,
-scripts, and even our papers (written in \LaTeX) will be stored in this shared
+scripts, and even our papers (written in \LaTeX) has been stored in this shared
 repository.  This allows us, as a distributed team working in disparate
 locations, to share all content and stay up-to-date with others contributions.
 
 Git also provides issue tracking that we have begun using in an effort to track
 progress and discussion on multiple concurrent items.
-
-\subsection{ Development Milestones  }
-
-\begin{itemize}
-\item 17 Nov -- Storyboards and Lo-fi Prototypes
-\item 19 Nov -- Webservice completed and API locked for data transfer
-\item 23 Nov -- pre-Alpha ``Sketchable'' interface working on Sim with fabricated geo data
-\item 24 Nov -- Initial User Feedback incorporated into final designs
-\item 26 Nov -- Early ``Alpha'' version of the mobile client ready
-\item 1 Dec -- Prototype due
-
-\end{itemize}
-
-\subsection{ Application Architecture }
-
-The heart of the mobile application will be the integration of a live video
-feed from the device's camera overlaid by user contributed sketches for the
-current location of the device.  The application will rely on Apple's
-CoreLocation service to provide the location and orientation information in
-order to retrieve user content from the web service.  We will run an NSTimer
-that will create NSInvocationOperations at regular intervals to submit any user
-created content in the background during viewing and to retrieve any new
-content for the user's current geographic area.
-
-We intend to incorporate a simple user identity component using Twitter.  This
-will allow us to attach a user to a sketch without having to manage the
-identity infrastructure.  By having identity information attached to each
-contribution, we will also have the ability to allow users to filter based upon
-the user.
-
-There will be a tagging component, although it will be limited in this initial
-prototype.  The user will be able to create a set of tags that will be applied
-to sketches created after tag assignment.
-
-Finally, a map view will be provided which will indicate to the user sketches
-near to them, to allow for ``sketch tours'' or other artistic discoveries.
-
-\begin{figure}
-\centering
-\includegraphics[width=.45\textwidth]{arch.pdf}
-\caption{A simplified diagram showing client communications}
-\label{fig:arch}
-\end{figure}
 
 \section{evaluation}
 
@@ -558,16 +533,13 @@ Kim and Dey \cite{augmented_reality:kim} presents displaying augmented reality
 based car navigation information on windshield. Augmented reality helps elder
 people can concentrate to drive a car and easily follow directions from a
 navigation system. Augmented reality is one of ways to display various
-information in a view. Likewise, overlapping sketches can help for users to
-know what has happened in a certain location, even though augmented reality is
-not exactly applied to our application. In addition, our application provides
-users with some filters such as name of a drawer, time and so on, so that they
-can select what they want to view.
+information in a view. Likewise, overlapping sketches in our application can help for users to
+know what has happened in a certain location.
 
 Bast\'{e}a-Forte and Yen \cite{brainstorming:marcello} presents a collaborative
 sketching tool. Each user has a Tablet PC to draw some sketches and to view
-shared sketches. Each userÕs drawling is synchronized, so that users can view
-the same drawling. The collaborative sketching tool helps each userÕs
+shared sketches. Each user's drawling is synchronized, so that users can view
+the same drawling. The collaborative sketching tool helps each user's
 contribution is equalized although it reduces total number of sketches. Our
 application enables users to collaborate drawing no matter what their
 relationship is.
@@ -582,8 +554,7 @@ the client. The client can then decide whether it wants to retrieve the full
 data. Therefore, the client can directly connect to the service. A discovery
 service is used to find services which are relevant for a client in its current
 context. It uses the messenger protocol to inform the client software about new
-services. In our project, we will find sketches relevant for a client based on
-its current context information - both GPS data and twitter friends.
+services.
 
  The authors in \cite{ink:lindell} tested a few hardware and software
 technologies in real-time collaborative system, basically raised two
@@ -594,17 +565,20 @@ long-term reference, respectively. The softwares include NetMeeting, OneNote,
 DyKnow. Their work is mainly to help students share class materiel and
 simultaneously edit presentation text or  sketch.
 
-Scheible and Ojala \cite{mobilenin:scheible} proposed MobiLenin system which allows users using their mobile devices to interact simultaneously with a multi-track music video shown on a large public display. It is built on a server-client based architecture. Our work can be inspired by their interface which combines the private GUI of a personal mobile device with the public GUI of a public display. In their system, a group of people can share the authorship of the multimedia art piece in real time. The users are aware of what others in the co-located group do and make a good contact with each other.
+Scheible and Ojala \cite{mobilenin:scheible} proposed MobiLenin system which allows users to use their mobile devices to interact simultaneously with a multi-track music video shown on a large public display. It is built on a server-client based architecture. Our work can be inspired by their interface which combines the private GUI of a personal mobile device with the public GUI of a public display. In their system, a group of people can share the authorship of the multimedia art piece in real time. The users are aware of what others in the co-located group do and make a good contact with each other.
 
 Scheible, Ojala and Coulton \cite{mobitoss:scheible} also implement MobiToss application which allows gesture control, for creating and sharing mobile multimedia art. The directions are also considered in their system. By tilting the phone in different directions, the clip taken by the phone will be transferred to public display. The clip is also uploaded to a website for sharing the created multimedia art with others. It is somehow like our google map viewer for sketches.
 
-\section{discussion}
 
 \section{conclusion and future work}
-The tests shows people can draw on their device smoothly and effectively. They feel happy when finding they can make sketch together with others on a small device individually. As it is an almost real-time application, the device will show the newly strokes almost immediately after the strokes are created. One can also view the entire map with sketches in multiply places in google map, from where by clicking a marker, a window with sketch and tags will pop up. Later, we may add search function to search sketches in certain locations. Further work will focus on ways to display this potentially large dataset in a way optimized for small devices.
+The evaluation results show people can draw sketches on their device smoothly and effectively. They felt excited when they can make sketch together with others on a small device individually despite their lack of temporal co-location. As it is an almost real-time application, the device will show the newly strokes almost immediately after the strokes are created. One can also view the entire map with sketches in multiply places in google map, from where by clicking a marker, a window with sketch will pop up. In the future, we will add search function on the customized Google map to search sketches in certain locations. Also, we will focus on ways to display this potentially large dataset in a way optimized for small devices.
 
 
 \bibliographystyle{abbrv}
 \bibliography{sample}
+
+\newpage
+\appendix
+\input appendix.tex
 
 \end{document}
