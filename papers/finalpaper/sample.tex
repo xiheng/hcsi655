@@ -83,10 +83,9 @@ The spatial data has
 \item the current position the user locates, indicated by x (latitude), y
 	(longitude) and z (altitude) available via GPS in the device.
 \item the current orientation the user faces available via the magnetic compass
-	within the device.  The orientation is important because view would be affected given different
-         orientation.
+	within the device.  The orientation is important because the view would be
+	affected given different orientation.
 \end{enumerate}
-
 
 Just like common social networks, users have his/her own networks in our
 system. i.e., one may only interested in his/her friends' sketches or sketches
@@ -133,6 +132,7 @@ The specific activities users conduct using our system include:
 \section{design process}
 
 \subsection{Ethnographic data gathering}
+
 We conducted three semi-structured interviews and carried out at least five
 other free form conversations around the goals of the project.  Since graphics
 creation on mobile devices is very infantile, we instead chose to focus on
@@ -163,14 +163,14 @@ These questions, although not rigidly adhered to, provided for interesting
 conversation starters and were definitely useful in showing a definite interest
 in our eventual application.
 
-One of the interviewees came from China and is a student at Texas A\&M
-University.  He mentioned he usually uses Paint application and sometimes uses
-Photoshop and that, overall, he uses graphics applications about once a month.
-His responses indicated that the MS Paint application is simple and easy to
-use, and that Photoshop has too many functions and is quite sophisticated to
-use.  Additionally, after he heard about our application, he said it would be
-helpful to provide a function to search a sketch drawn by friends without going
-to a certain location.
+One of the interviewees, a student at Texas A\&M University, mentioned he
+usually uses the Paint application and sometimes uses Photoshop and that,
+overall, he uses graphics applications about once a month.  His responses
+indicated that the MS Paint application is simple and easy to use, and that
+Photoshop has too many functions and is quite sophisticated to use.
+Additionally, after he heard about our application, he said it would be helpful
+to provide a function to search a sketch drawn by friends without going to a
+certain location.
 
 One of a the respondents, an economics student of Chinese origins, has never used an
 iPhone before.  Yet, she is very interested in drawing and painting.  She
@@ -243,10 +243,10 @@ position.  This can be weakly seen in Figure \ref{fig:s2}.
 \caption{Scenario 2} \label{fig:s2}
 \end{figure*}
 
-
-
 \section{User Study}
+
 \subsection{Interviewees}
+
 We conducted eight people:
 
 \begin{itemize}
@@ -452,7 +452,15 @@ to sketches created after tag assignment.
 Finally, a map view is provided. It indicates to the user sketches
 near to them, to allow for ``sketch tours'' or other artistic discoveries.
 
-Figure \ref{fig:arch} presents our proposed system architecture. Mobile users can draw sketches together despite their lack of temporal co-location. For example, user A drew sketch in a certain location (point$_{0}$) at t$_{0}$ and left the location. The user A's drawing has been stored into database through web service (web server). Sometime later, user B came to the location (point$_{0}$) and adds some sketches into the previous sketch drawn by user A at t$_{1}$. Web users can view what people has drawn by their web browser which accesses to our web service (web server). Each marker in our map page indicates there are sketches in the location.
+Figure \ref{fig:arch} presents our proposed system architecture. Mobile users
+can draw sketches together despite their lack of temporal co-location. For
+example, user A drew sketch in a certain location (point$_{0}$) at t$_{0}$ and
+left the location. The user A's drawing has been stored into database through
+web service (web server). Sometime later, user B came to the location
+(point$_{0}$) and adds some sketches into the previous sketch drawn by user A
+at t$_{1}$. Web users can view what people has drawn by their web browser which
+accesses to our web service (web server). Each marker in our map page indicates
+there are sketches in the location.
 
 \begin{figure}
 \centering
@@ -473,13 +481,12 @@ possible to develop iPhone applications outside of Xcode, using other text
 editors and foregoing the builtin debugging integration that Xcode offers, but
 to compile and link, one is still required to use the provided tools by Apple.
 For this reason, we focused on the Xcode environment and the full
-stack that it has to offer.  In particular, we has used the following:
+stack that it has to offer.  In particular, we used the following:
 
 \begin{itemize}
 \item development workstations will run OSX
 \item Xcode
 \item iPhone 3G S
-\item iPhone Simulator
 \end{itemize}
 
 \subsubsection{Web Service}
@@ -495,14 +502,15 @@ centralized web service is required. This web service was built using the follow
 \item JSON for data transport
 \end{itemize}
 
- We built up a google map with markers of sketches on a web page. This enables users view sketches globally and have a sense of the sketch distribution directly.
+We built up a google map with markers of sketches on a web page. This enables
+users to view sketches globally and have a sense of the sketch distribution
+directly.
 
 \begin{itemize}
-\item google map api
-\item javascript
+\item Google map api
+\item Javascript
 \end{itemize}
 
-   
 \subsubsection{Version Control \& Source Code Management}
 
 In order to facilitate sharing our work, we have created a repository at
@@ -517,7 +525,331 @@ progress and discussion on multiple concurrent items.
 
 \section{evaluation}
 
+\subsection{Overview}
+In order to guide the development of the application, we had several rounds of
+user input.  The first study involved paper mockups and the second involved our
+participants actually using the application live on a device.
+
+\subsection{User Study 1}
+
+The first round of user study involved a lo-fi prototype using interfaces drawn
+on 3x5 cards and contained within a lexan case allowing.  This interface was
+quite successful in proving the concept and allowed rapid prototyping of the
+interface views involved.  An image of the interface can be seen in Figure
+\ref{fig:plastic}.
+
+\begin{figure}
+\centering
+\includegraphics[width=.40\textwidth]{plastic.pdf}
+\caption{drawnTogether version -1.0} \label{fig:plastic}
+\end{figure}
+
+\subsubsection{Interviewees}
+We interviewed the following eight people:
+
+\begin{itemize}
+\item (A) male, an iphone 3G S user
+\item (B) male, a computer science graduate student
+\item (C) female, a person who enjoys drawing
+\item (D) male, an iPhone 3G S user
+\item (E) male, a computer science graduate student
+\item (F) male, a computer science graduate student
+\item (G) male, professional graphic artist and iPhone 3G S user
+\item (H) female, non-technical profession, non-iPhone user
+\end{itemize}
+
+\subsubsection{conducting user study}
+
+Conducting the user study can involve multiple methods.  For our study, we took
+an informal, guided conversational approach to gather the information.  We
+provided a semi-structured questionnaire that our interviewers were to follow.
+
+This questionnaire was divided up into multiple phases.
+
+\subsubsection{ Introduction }
+
+This phase consisted of multiple steps:
+\begin{itemize}
+\item welcome and greetings
+\item gather consent and completion of form
+\item introduce the system in conversational form
+\item communicate goals for this study
+\end{itemize}
+
+This phase was general housekeeping and provided for a welcoming and
+acclimation period between the interviewer and interviewee.  Any general
+questions were encouraged at this point about the general concept, but the
+system had not been officially ``placed in their hands'' yet.
+
+\subsubsection{ Facilitation }
+In order to gather information about usage, we physically handed the users a
+lo-fi representation of the drawnTogether interface in the form of a tangible,
+translucent enclosure with cards that can swap out to represent the varying
+views of the application.  When the user ``navigated'' between the views, the
+interviewer acted as the computer and moved the cards for the user.  The
+benefits of this are numerous, but primarily, it allows us to iteratively
+improve the interface and pilot new versions in a much faster way than
+implementing the changes in software first.
+
+We interviewed multiple individuals (eight total) over a period of three days.
+The first six individuals used the same version of our interface.  The last two
+used a modified version based on feedback gained from earlier interviews.  The
+second version of our application views were very well received, as will be
+seen in the following commentary.
+
+For each interview, we began our questions with handing them the device, then
+asking the following:
+
+\begin{quote}
+Is there anything particularly interesting about the concept of the
+application?
+\end{quote}
+
+Most respondents actually felt the application to be quite interesting.
+Respondent B, however, felt that it's merely a ``funny application'', and
+doubted if there would be enough situations for the system to be used.   He did
+provide one possible  scenario. Imagine a group of architecture students enter
+into one building to make a sketch of the inside structure of this building.
+Each student can find whether the viewer around him or her has been drawn or
+not. If not, he can add his sketch on the screen of the application.  If yes,
+he may ignore it and go to other places to draw or make some correction based
+on others' drawings.  It was interesting to the researchers that even a skeptic
+began to imagine practical, unforeseen collaborative uses.
+
+Following the initial question, we followed with providing four erasable
+markers of differing colors to the interviewee.  We had them ``navigate'' to
+the drawing screen if he or she were on a different screen.  At this point, we
+asked the following:
+\begin{quote}
+Can you draw a simple picture using multiple colors on the screen?
+\end{quote}
+
+With this question, we wanted to gauge the intuitiveness of the interface and
+the user's ability to recognize visual affordances and their mapping to
+intended tasks.  Person A asked ``Can I draw now?  What's the status of my
+pen?''.  Several users touched the settings button before ever trying to draw,
+with the purpose of exploring their options and tools before actually beginning
+any sketch creation.  Person C immediately picked up a random pen (blue) and
+began drawing on the screen.  When asked how they would change colors in the
+application, the response was ``Oh\ldots  the settings page'', to which she
+instantly and easily navigated to the page and chose the blue color.  Again,
+with each navigation, the interviewer acted as the computer and moved the cards
+as requested to transfer the user to different views.  Once in the settings
+page, all users had an apparently clear understanding of how to manipulate the
+current drawing color or erasure.
+
+Multiple users asked about the tagging features visible on the settings page.
+With minimal instruction from our facilitator, users understood the nature.
+One thing was made clear to the developers with these questions, though.  The
+ability to create tags and filter tags on the same view was a little confusing
+and needs to be revisited.  The later revision used by the last two
+interviewees provided a much clearer mapping and helped to eradicate most of
+the confusion.
+
+There were several questions about the appropriate time to tag a drawing or as
+to the origin of the tags used for filtering.  These questions were quite
+helpful in illuminating deficiencies with some of the feedback mechanisms
+around the affordances related to tagging.
+
+One interesting suggestion from multiple users was to add a voting feature for
+a given location's sketches.  This way, a ranking per location could be used to
+sort each location and be communicated on the map also.
+
+Our next question was one which encouraged them to examine the map view, if
+they had not already seen it:
+\begin{quote}
+Please navigate to the map view. {\it [pause for navigation]}
+What pieces of information do you gather from this view?
+\end{quote}
+
+Once on the map, Person G mentioned ``Oh, I can see where other users sketches
+are.  Cool''.  This was very satisfying to the researcher that the primary and
+immediate purpose of the map was summed up so well.  User A asked, ``Can you
+show the actual sketches from different locations on the map? In a pop-up
+window maybe?''  This was an intended addition to the software implementation.
+
+\subsubsection{Interview Completion}
+
+In this phase, we attempted to provide a summary of each person's response and
+to gather further clarification if needed.
+
+We also ended with one final question, intended to spark a free form conversation:
+
+\begin{quote}
+Are there any recommendations you would make to improve your experience?
+\end{quote}
+
+Two individuals suggested moving the color palette from the setting page to the
+bottom of the drawing view.  This would have the effect of drastically reducing
+the interaction required for a meta task of changing the drawing color.  Several
+users changed colors at least twice, so the benefits of this change seem
+beneficial.  For the final two interviews, this change was adopted and proven
+to be a valid enhancement immediately.  Person G used the modified drawing view
+and changed colors five times while creating a sketch.  Person H changed colors
+four times.  This was a definite, measurable improvement and allowed for a more
+refined workflow for task completion.
+
+The sacrifice of reduced drawing area was mitigated by removing the top bar
+completely in the drawing view and adding navigational elements to the bottom
+toolbar to allow for access to settings and the map.  This had no visible,
+negative effect on the latter participants in the study on their ability to
+navigate between views.  The changed views can be seen in Figure \ref{fig:chg}.
+
+\begin{figure}
+\centering
+\includegraphics[width=.45\textwidth]{interface.pdf}
+\caption{On the right, we see the modified drawing interface, with the color
+pallete immediately visible at the bottom of the screen.  On the right, the
+original interface requiring navigation away from the sketch to alter colors.}
+\label{fig:chg}
+\end{figure}
+
+Another suggestion, offered by Person A, was to launch the application with the
+map page initially.  Further conversation with the participant on this
+consideration showed several potential benefits of adopting this.
+\begin{itemize}
+\item Participation feedback is immediately communicated by this macro approach
+to making visible the locations containing sketches.  Each sketch becomes just
+one minor data point on the geographical plot.
+\item Users can immediately choose to physically change their location in order
+to either add to an existing drawing or to create something new and unique
+\item Community involvement is augmented by seeing participation.  If each map
+pin is somehow annotated with the sketch age, a visual component could easily
+communicate a temporal nature for each sketch showing which areas could benefit
+from a ``fresh creation''.
+\end{itemize}
+
+Nearly all participants expressed an interest in getting this application for
+their personal use.
+
+\subsection{ User Study 2 }
+
+User Study 2 actually involved a software implementation to the interviewees
+and allowed them to interact with the application in real time.
+
+\subsubsection{Interviewees}
+
+\begin{itemize}
+\item (A) male, an iphone 3G S user and graphic designer
+\item (B) female, a computer science graduate student
+\item (C) female, non-technical profession, non-iPhone user
+\item (D) male, a computer science graduate student and iPhone user
+\item (E) male, a computer science graduate student and iPhone user
+\end{itemize}
+
+\subsubsection{conducting user study}
+
+To gather the necessary information, the following tasks were asked of the
+participants.
+
+\begin{itemize}
+\item Navigate to the map and view other drawings in your area
+\item Navigate to the filter screen and disable a filtered tag
+\item view existing sketches in your area
+\item create a sketch using at least 2 colors
+\end{itemize}
+
+The conditions which would be varied were the number of sketches in the user's
+area and the sketches requested of them.
+
+During each of these tasks, the participant was asked to use the think aloud
+method to allow the observer to gather user perceptions concerning the
+application.
+
+During the tasks, the following dependent variables were measured for each participant:
+
+\begin{itemize}
+\item length of time to navigate to the map view
+\item length of time to navigate to the filter view
+\item period of time using the sketch viewer
+\item number of strokes used in the creation of the sketches
+\item number of color changes while creating their sketches
+\end{itemize}
+
+Following the user tasks, four rating questions using a Lichert scale and two
+free form questions were asked of the participants.
+
+The four rating questions were introduced with the following:
+\begin{quote}
+On a scale of 1 to 5, with 5 feeling the most strongly about it and 1 feel the
+least strongly about it\ldots
+\end{quote}
+
+The following ratings questions were posed:
+\begin{enumerate}
+\item How empowered did you feel in the creation of virtual graffiti or sketches using the application?
+\item How likely would you use this as a tool for discovery of content in your area?
+\item How pleased are you with the drawing you created?
+\item How likely would you be to create sketches or to add to the sketches of others?
+\end{enumerate}
+
+Following these rating questions, participants were asked two more enquiries:
+
+\begin{enumerate}
+\item Was there anything you found particularly frustrating or confusing about the application?
+\item Was there anything you particularly enjoyed about the application?
+\end{enumerate}
+
+\subsubsection{Measured Variables}
+
+The results can be viewed in Table \ref{tbl:deps}.
+
+\begin{table*}
+\centering
+\caption{dependent variables}
+\begin{tabular}{|l|r|r|r|r|r|}
+\hline
+var & $p_A$ & $p_B$ & $p_C$ & $p_D$ & $p_E$   \\
+\hline
+length of time to navigate to the map view   &   1s  &  2s & 1s & 1s & 4s \\
+length of time to navigate to the filter view &  1s  &  3s & 1s & 1s & 2s \\
+period of time using the sketch viewer  &  2+ mins & 33 secs & 26 secs & 2+ mins & 76 secs  \\
+number of strokes used in the creation of the sketches  &  40+ & 14 & 14 & 13 & 11 \\
+number of color changes while creating their sketches  &  10+ & 4 & 2 & 3 & 4 \\
+\hline
+\end{tabular}
+\label{tbl:deps}
+\end{table*}
+
+The number of strokes used in the creation was an interesting metric to capture
+and basically involved counting the strokes after the drawing was created.  The
+webservice data could be mined to provide for these reports and will be
+implemented for further work.
+
+Overall, the results were very interesting.  An observation made by the
+interviewer was that when the user study was conducted in a more lackadaisical
+
+\subsubsection{questionnaires}
+
+Overall, the results from the questionnaires were very enlightening and
+encouraging.   The responses of the scaled questions were quite high, with most
+rating either a 4 or 5.  One noteworthy answer was in response to ``How pleased
+are you with the drawing you created?'' The respondent stated ``3'' and then
+elaborated with the statement that he'd like to be able to freeze frame on a
+location, then tilt the device downward and draw in that manner.  He stated
+this would be much more comfortable and allow much longer to work on a piece
+and to work on that piece after having left the area.  The argument seems quite
+plausible and is definitely something to look into.  It would be adding a
+feature which trades a bit of complexity for a great deal of empowerment of the
+user.
+
+\subsubsection{conclusion}
+
+The reception from those experiencing the application was excellent and
+exciting.   Participants in the study were quite interested in the working
+prototype and anxious to see further development of the application.
+
+There were suggestions offered for improvement, but the concept itself was very
+well received.  To conclude, we ended with a quote from a member of the study:
+
+\begin{quote}
+This entire thing is just exciting!  I love the collaborative aspect of drawing
+wherever I am. The bonus of being able to tag and avoid jailtime is also a
+huge plus!
+\end{quote}
+
 \section{prior work}
+
 Zurita et al. \cite{sketching:zurita} presents MCSketcher, a mobile
 collaborative sketching system, using handheld devices in an ad-hoc network.
 People can draw sketches with collaborators in the same page in the system.
@@ -569,9 +901,18 @@ Scheible and Ojala \cite{mobilenin:scheible} proposed MobiLenin system which all
 
 Scheible, Ojala and Coulton \cite{mobitoss:scheible} also implement MobiToss application which allows gesture control, for creating and sharing mobile multimedia art. The directions are also considered in their system. By tilting the phone in different directions, the clip taken by the phone will be transferred to public display. The clip is also uploaded to a website for sharing the created multimedia art with others. It is somehow like our google map viewer for sketches.
 
-
 \section{conclusion and future work}
-The evaluation results show people can draw sketches on their device smoothly and effectively. They felt excited when they can make sketch together with others on a small device individually despite their lack of temporal co-location. As it is an almost real-time application, the device will show the newly strokes almost immediately after the strokes are created. One can also view the entire map with sketches in multiply places in google map, from where by clicking a marker, a window with sketch will pop up. In the future, we will add search function on the customized Google map to search sketches in certain locations. Also, we will focus on ways to display this potentially large dataset in a way optimized for small devices.
+
+The evaluation results show people can draw sketches on their device smoothly
+and effectively. They felt excited when they can make sketch together with
+others on a small device individually despite their lack of temporal
+co-location. As it is an almost real-time application, the device will show the
+newly strokes almost immediately after the strokes are created. One can also
+view the entire map with sketches in multiply places in google map, from where
+by clicking a marker, a window with sketch will pop up. In the future, we will
+add search function on the customized Google map to search sketches in certain
+locations. Also, we will focus on ways to display this potentially large
+dataset in a way optimized for small devices.
 
 
 \bibliographystyle{abbrv}

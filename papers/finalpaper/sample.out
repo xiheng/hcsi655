@@ -5,21 +5,37 @@
 \BOOKMARK [2][-]{section*.8}{Storyboards}{section*.6}
 \BOOKMARK [3][-]{section*.9}{Scenario 1: collaborative drawing}{section*.8}
 \BOOKMARK [3][-]{section*.10}{scenario 2: event impressions}{section*.8}
-\BOOKMARK [1][-]{section*.11}{User Study 1}{}
+\BOOKMARK [1][-]{section*.11}{User Study}{}
 \BOOKMARK [2][-]{section*.12}{Interviewees}{section*.11}
 \BOOKMARK [2][-]{section*.13}{conducting user study}{section*.11}
-\BOOKMARK [3][-]{section*.14}{ Introduction }{section*.13}
+\BOOKMARK [3][-]{section*.14}{Introduction}{section*.13}
 \BOOKMARK [2][-]{section*.15}{Facilitation}{section*.11}
 \BOOKMARK [2][-]{section*.16}{Interview Completion}{section*.11}
-\BOOKMARK [1][-]{section*.17}{Implementation}{}
-\BOOKMARK [2][-]{section*.18}{ Application Environment and Development Tools }{section*.17}
-\BOOKMARK [3][-]{section*.19}{ Mobile Client }{section*.18}
-\BOOKMARK [3][-]{section*.20}{ Web Service }{section*.18}
-\BOOKMARK [3][-]{section*.21}{ Version Control \046 Source Code Management }{section*.18}
-\BOOKMARK [2][-]{section*.22}{ Development Milestones }{section*.17}
-\BOOKMARK [2][-]{section*.23}{ Application Architecture }{section*.17}
-\BOOKMARK [1][-]{section*.24}{evaluation}{}
-\BOOKMARK [1][-]{section*.25}{prior work}{}
-\BOOKMARK [1][-]{section*.26}{discussion}{}
-\BOOKMARK [1][-]{section*.27}{conclusion and future work}{}
-\BOOKMARK [1][-]{section*.28}{REFERENCES }{}
+\BOOKMARK [1][-]{section*.17}{Development}{}
+\BOOKMARK [2][-]{section*.18}{System Architecture}{section*.17}
+\BOOKMARK [2][-]{section*.19}{Application Environment and Development Tools}{section*.17}
+\BOOKMARK [3][-]{section*.20}{Mobile Client}{section*.19}
+\BOOKMARK [3][-]{section*.21}{Web Service}{section*.19}
+\BOOKMARK [3][-]{section*.22}{Version Control \046 Source Code Management}{section*.19}
+\BOOKMARK [1][-]{section*.23}{evaluation}{}
+\BOOKMARK [2][-]{section*.24}{Overview}{section*.23}
+\BOOKMARK [2][-]{section*.25}{User Study 1}{section*.23}
+\BOOKMARK [3][-]{section*.26}{Interviewees}{section*.25}
+\BOOKMARK [3][-]{section*.27}{conducting user study}{section*.25}
+\BOOKMARK [3][-]{section*.28}{ Introduction }{section*.25}
+\BOOKMARK [3][-]{section*.29}{ Facilitation }{section*.25}
+\BOOKMARK [3][-]{section*.30}{Interview Completion}{section*.25}
+\BOOKMARK [2][-]{section*.31}{ User Study 2 }{section*.23}
+\BOOKMARK [3][-]{section*.32}{Interviewees}{section*.31}
+\BOOKMARK [3][-]{section*.33}{conducting user study}{section*.31}
+\BOOKMARK [3][-]{section*.34}{Measured Variables}{section*.31}
+\BOOKMARK [3][-]{section*.35}{questionnaires}{section*.31}
+\BOOKMARK [3][-]{section*.36}{conclusion}{section*.31}
+\BOOKMARK [1][-]{section*.37}{prior work}{}
+\BOOKMARK [1][-]{section*.38}{conclusion and future work}{}
+\BOOKMARK [1][-]{section*.39}{REFERENCES }{}
+\BOOKMARK [1][-]{section*.41}{Web Server APIs}{}
+\BOOKMARK [2][-]{section*.42}{Login}{section*.41}
+\BOOKMARK [2][-]{section*.43}{Insert sketches to DB}{section*.41}
+\BOOKMARK [2][-]{section*.44}{Get sketches from DB}{section*.41}
+\BOOKMARK [2][-]{section*.45}{Get map information}{section*.41}
