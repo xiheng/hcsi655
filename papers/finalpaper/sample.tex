@@ -66,7 +66,7 @@ increasing when they can contribute to something permanently, even in the
 digital sense.
 \end{abstract}
 
-\keywords{put author keywords here} 
+\keywords{ sketch, collaboration, interaction, location awareness} 
 
 \category{H.5.2}{Information Interfaces and Presentation}{Miscellaneous}[Optional sub-category]
 
@@ -76,9 +76,9 @@ People are intended to do funny things together. Sometimes, they also want other
 The purpose of this application is to help users collaborate and communicate better with others in the same network, or let actors be more aware of what happened around based on context information and more involved in social activities. 
 
 \section{Approach}
-We are going to develop a collaborative artistic application for the iPhone 3GS. This application allows users draw sketches on their iPhone and upload the sketch as well as their global position and orientation at that moment, to a server. The sketch can be anything the user wants to draw. It can be the view he/she is seeing, or the idea he/she is thinking about, or his mood and his feeling. The context information accompanied by the sketch contains both temporal and spatial information. Each sketch will be timestamped at the point it is uploaded to the server.
+We develop a collaborative artistic application for the iPhone 3GS. This application allows users draw sketches on their iPhone 3GS and upload the sketch as well as their global position and orientation at that moment, to a server. The sketch can be anything the user wants to draw. It can be the view he/she is seeing, or the idea he/she is thinking about, or his mood and feeling. The context information accompanied by the sketch uploaded to server together contains both temporal and spatial information. Each sketch is timestamped at the point it is uploaded to the server.
 
-The spatial data has:
+The spatial data has
 \begin{enumerate}
 \item the current position the user locates, indicated by x (latitude), y
 	(longitude) and z (altitude) available via GPS in the device.
@@ -88,21 +88,11 @@ The spatial data has:
 \end{enumerate}
 
 
-
-\begin{figure}
-\centering
-\includegraphics[width=.45\textwidth]{arch.pdf}
-\caption{A simplified diagram showing client communications}
-\label{fig:arch}
-\end{figure}
-
 Just like common social networks, users have his/her own networks in our
 system. i.e., one may only interested in his/her friends' sketches or sketches
 based on their tagged metadata.  It is expected that the amount of created
 sketches could quickly overload our small interface.  For this reason, we are
-initially allowing sketches to be filtered based on tags and their creator, as
-seen in Figure \ref{fig:settings}.  Further work will focuse on ways to display
-this potentially large dataset in a way optimized for small devices.
+initially allowing sketches to be filtered based on tags and their creator.
 
 \begin{figure}
 \centering
@@ -113,17 +103,16 @@ this potentially large dataset in a way optimized for small devices.
 
 \begin{figure}
 \centering
-\includegraphics[width=.3\textwidth]{settings.pdf}
-\caption{A mockup of the proposed settings interface}
-\label{fig:settings}
+\includegraphics[width=.3\textwidth]{map.pdf}
+\caption{A mockup of the proposed map interface}
+\label{fig:map}
 \end{figure}
 
 The specific activities users will conduct using our system include:
 \begin{enumerate}
 \item Hold iphone in hand, stay at any location GPS can track.
-\item On the iphone screen, make some sketch as seen in Figure \ref{fig:draw}
-\item For sketch, users can paint in a limited number of colors and have that
-	creation tagged as seen in Figure \ref{fig:settings}
+\item On the iphone screen, make some sketch as seen in Figure \ref{fig:draw}. Users can select color (red, yellow, green, blue) from the palette at the bottom of the screen.
+\item For sketch, users can have that creation tagged in setting page.
 \item As the sketch is created, it will be uploaded to the server at small
 	increments (every $n$ seconds)
 \item Users can retrieve entries based on a simple query interface. Thus
@@ -134,13 +123,6 @@ The specific activities users will conduct using our system include:
 
 Here is a list of the components we use to prototype for
 the system (hardware and software)
-
-\begin{figure}
-\centering
-\includegraphics[width=.3\textwidth]{map.pdf}
-\caption{A mockup of the proposed map interface}
-\label{fig:map}
-\end{figure}
 
 \begin{enumerate}
 \item Client interface
@@ -159,14 +141,14 @@ the system (hardware and software)
         \end{itemize}
 
 
-Besides, we build up a google map with marker of sketches on a webpage. This enables users view  sketches globally and have a sense of the sketch distribution directly.
+Besides, we build up a google map with markers of sketches on a webpage. This enables users view  sketches globally and have a sense of the sketch distribution directly.
+
 \item Google Map
    \begin{itemize}
    \item google map api
    \item javascript
    \end{itemize}
    \end{enumerate}
-
 
 \section{design process}
 
@@ -551,6 +533,13 @@ to sketches created after tag assignment.
 Finally, a map view will be provided which will indicate to the user sketches
 near to them, to allow for ``sketch tours'' or other artistic discoveries.
 
+\begin{figure}
+\centering
+\includegraphics[width=.45\textwidth]{arch.pdf}
+\caption{A simplified diagram showing client communications}
+\label{fig:arch}
+\end{figure}
+
 \section{evaluation}
 
 \section{prior work}
@@ -612,7 +601,7 @@ Scheible, Ojala and Coulton \cite{mobitoss:scheible} also implement MobiToss app
 \section{discussion}
 
 \section{conclusion and future work}
-The tests shows people can draw on their device smoothly and effectively. They feel happy when finding they can make sketch together with others on a small device individually. As it is an almost real-time application, the device will show the newly strokes almost immediately after the strokes are created. One can also view the entire map with sketches in multiply places in google map, from where by clicking a marker, a window with sketch and tags will pop up. Later, we may add search function to search sketches in certain locations.
+The tests shows people can draw on their device smoothly and effectively. They feel happy when finding they can make sketch together with others on a small device individually. As it is an almost real-time application, the device will show the newly strokes almost immediately after the strokes are created. One can also view the entire map with sketches in multiply places in google map, from where by clicking a marker, a window with sketch and tags will pop up. Later, we may add search function to search sketches in certain locations. Further work will focus on ways to display this potentially large dataset in a way optimized for small devices.
 
 
 \bibliographystyle{abbrv}
