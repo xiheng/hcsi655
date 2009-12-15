@@ -118,8 +118,8 @@ seen in Figure \ref{fig:settings}.
 The specific activities users conduct using our system include:
 \begin{enumerate}
 \item Hold iphone in hand, stay at any location GPS can track.
-\item On the iphone screen, make some sketch as seen in Figure \ref{fig:draw}. Users can select color (red, yellow, green, blue) from the palette at the bottom of the screen.
-\item For sketch, users can have that creation tagged in setting page.
+\item On the iphone screen, make some sketch as seen in Figure \ref{fig:draw}.
+\item For sketch, users can select color (red, yellow, green, blue) from the palette and create tagged in setting page as seen in Figure \ref{fig:settings}.
 \item As the sketch is created, it will be uploaded to the server at small
 	increments (every $n$ seconds)
 \item Users can retrieve entries based on a simple query interface. Thus
@@ -243,11 +243,21 @@ position.  This can be weakly seen in Figure \ref{fig:s2}.
 \caption{Scenario 2} \label{fig:s2}
 \end{figure*}
 
-\section{User Study}
+\section{User Study 1}
+The user study involved a lo-fi prototype using interfaces drawn
+on 3x5 cards and contained within a lexan case allowing.  This interface was
+quite successful in proving the concept and allowed rapid prototyping of the
+interface views involved.  An image of the interface can be seen in Figure
+\ref{fig:plastic}.
+
+\begin{figure}
+\centering
+\includegraphics[width=.40\textwidth]{plastic.pdf}
+\caption{drawnTogether version -1.0} \label{fig:plastic}
+\end{figure}
 
 \subsection{Interviewees}
-
-We conducted eight people:
+We interviewed the following eight people:
 
 \begin{itemize}
 \item (A) male, an iphone 3G S user
@@ -268,9 +278,9 @@ provided a semi-structured questionnaire that our interviewers were to follow.
 
 This questionnaire was divided up into multiple phases.
 
-\subsubsection{Introduction}
+\subsection{Introduction}
 
-This phase consists of multiple steps:
+This phase consisted of multiple steps:
 \begin{itemize}
 \item welcome and greetings
 \item gather consent and completion of form
@@ -278,18 +288,17 @@ This phase consists of multiple steps:
 \item communicate goals for this study
 \end{itemize}
 
-This phase is general housekeeping and provides for a welcoming and
-customization period between the interviewer and interviewee.  Any general
-questions are encouraged at this point about the general concept, but the
-system has not been officially ``placed in their hands'' yet.
+This phase was general housekeeping and provided for a welcoming and
+acclimation period between the interviewer and interviewee.  Any general
+questions were encouraged at this point about the general concept, but the
+system had not been officially ``placed in their hands'' yet.
 
 \subsection{Facilitation}
-
-In order gather information about usage, we physically hand the users a
+In order to gather information about usage, we physically handed the users a
 lo-fi representation of the drawnTogether interface in the form of a tangible,
 translucent enclosure with cards that can swap out to represent the varying
-views of the application.  When the user ``navigates'' between the views, the
-interviewer acts as the computer and move the cards for the user.  The
+views of the application.  When the user ``navigated'' between the views, the
+interviewer acted as the computer and moved the cards for the user.  The
 benefits of this are numerous, but primarily, it allows us to iteratively
 improve the interface and pilot new versions in a much faster way than
 implementing the changes in software first.
@@ -302,27 +311,27 @@ seen in the following commentary.
 
 For each interview, we began our questions with handing them the device, then
 asking the following:
+
 \begin{quote}
 Is there anything particularly interesting about the concept of the
 application?
 \end{quote}
 
 Most respondents actually felt the application to be quite interesting.
-Respondent B, however, felt that it's merely a ``funny application'', and doubted if
-there would be enough situations for the system to be used.   He did provide
-one possible  scenario. Imagine a group of architecture students
-enter into one building to make a sketch of the inside structure of this
-building. Each student can find whether the viewer around him or her has been
-drawn or not. If not, he can add his sketch on the screen of the application.
-If yes, he may ignore it and go to other places to draw or make some correction
-based on others' drawings.  It was interesting to the researchers that even a
-skeptic began to imagine practical, unforeseen collaborative uses.
+Respondent B, however, felt that it's merely a ``funny application'', and
+doubted if there would be enough situations for the system to be used.   He did
+provide one possible  scenario. Imagine a group of architecture students enter
+into one building to make a sketch of the inside structure of this building.
+Each student can find whether the viewer around him or her has been drawn or
+not. If not, he can add his sketch on the screen of the application.  If yes,
+he may ignore it and go to other places to draw or make some correction based
+on others' drawings.  It was interesting to the researchers that even a skeptic
+began to imagine practical, unforeseen collaborative uses.
 
 Following the initial question, we followed with providing four erasable
 markers of differing colors to the interviewee.  We had them ``navigate'' to
 the drawing screen if he or she were on a different screen.  At this point, we
 asked the following:
-
 \begin{quote}
 Can you draw a simple picture using multiple colors on the screen?
 \end{quote}
@@ -337,7 +346,7 @@ began drawing on the screen.  When asked how they would change colors in the
 application, the response was ``Oh\ldots  the settings page'', to which she
 instantly and easily navigated to the page and chose the blue color.  Again,
 with each navigation, the interviewer acted as the computer and moved the cards
-as requested to transfer the user to different views.  Once in the setting
+as requested to transfer the user to different views.  Once in the settings
 page, all users had an apparently clear understanding of how to manipulate the
 current drawing color or erasure.
 
@@ -359,8 +368,7 @@ a given location's sketches.  This way, a ranking per location could be used to
 sort each location and be communicated on the map also.
 
 Our next question was one which encouraged them to examine the map view, if
-they had already not seen it:
-
+they had not already seen it:
 \begin{quote}
 Please navigate to the map view. {\it [pause for navigation]}
 What pieces of information do you gather from this view?
@@ -369,9 +377,8 @@ What pieces of information do you gather from this view?
 Once on the map, Person G mentioned ``Oh, I can see where other users sketches
 are.  Cool''.  This was very satisfying to the researcher that the primary and
 immediate purpose of the map was summed up so well.  User A asked, ``Can you
-show the sketches actual sketches from different locations on the map? In a
-pop-up window?''
-
+show the actual sketches from different locations on the map? In a pop-up
+window maybe?''  This was an intended addition to the software implementation.
 
 \subsection{Interview Completion}
 
@@ -385,28 +392,27 @@ Are there any recommendations you would make to improve your experience?
 \end{quote}
 
 Two individuals suggested moving the color palette from the setting page to the
-bottom of the drawing view. This would have the effect of drastically reducing the interaction required for a meta task of changing the drawing color.  Several
+bottom of the drawing view.  This would have the effect of drastically reducing
+the interaction required for a meta task of changing the drawing color.  Several
 users changed colors at least twice, so the benefits of this change seem
-beneficial.  For the final two interviews, this change was adopted, as
-seen in Figure \ref{fig:draw2}, and proven
-to be a valid enhancement immediately.  Person G used the modified drawing view
-and changed colors five times while creating a sketch.  Person H changed colors
+beneficial.  For the final two interviews, this change was adopted and proven to be a valid enhancement immediately.  Person G used the modified drawing view and changed colors five times while creating a sketch.  Person H changed colors
 four times.  This was a definite, measurable improvement and allowed for a more
 refined workflow for task completion.
-
-\begin{figure}
-\centering
-\includegraphics[width=.3\textwidth]{draw2.pdf}
-\caption{A mockup of the modifed drawing interface}
-\label{fig:draw2}
-\end{figure}
-
 
 The sacrifice of reduced drawing area was mitigated by removing the top bar
 completely in the drawing view and adding navigational elements to the bottom
 toolbar to allow for access to settings and the map.  This had no visible,
 negative effect on the latter participants in the study on their ability to
-navigate between views.
+navigate between views.  The changed views can be seen in Figure \ref{fig:chg}.
+
+\begin{figure}
+\centering
+\includegraphics[width=.45\textwidth]{interface.pdf}
+\caption{On the left, we see the modified drawing interface, with the color
+pallete immediately visible at the bottom of the screen.  On the right, the
+original interface requiring navigation away from the sketch to alter colors.}
+\label{fig:chg}
+\end{figure}
 
 Another suggestion, offered by Person A, was to launch the application with the
 map page initially.  Further conversation with the participant on this
@@ -415,18 +421,16 @@ consideration showed several potential benefits of adopting this.
 \item Participation feedback is immediately communicated by this macro approach
 to making visible the locations containing sketches.  Each sketch becomes just
 one minor data point on the geographical plot.
-\item Users can immediately choose to change their location in order to either
-add to an existing drawing or to create something new and unique
+\item Users can immediately choose to physically change their location in order
+to either add to an existing drawing or to create something new and unique
 \item Community involvement is augmented by seeing participation.  If each map
 pin is somehow annotated with the sketch age, a visual component could easily
 communicate a temporal nature for each sketch showing which areas could benefit
 from a ``fresh creation''.
 \end{itemize}
 
-In closing, almost all participants expressed an interest in getting this
-application for their personal use.
-
-
+Nearly all participants expressed an interest in getting this application for
+their personal use.
 
 \section{Development}
 
@@ -523,211 +527,11 @@ locations, to share all content and stay up-to-date with others contributions.
 Git also provides issue tracking that we have begun using in an effort to track
 progress and discussion on multiple concurrent items.
 
-\section{evaluation}
-
-\subsection{Overview}
-In order to guide the development of the application, we had several rounds of
-user input.  The first study involved paper mockups and the second involved our
-participants actually using the application live on a device.
-
-\subsection{User Study 1}
-
-The first round of user study involved a lo-fi prototype using interfaces drawn
-on 3x5 cards and contained within a lexan case allowing.  This interface was
-quite successful in proving the concept and allowed rapid prototyping of the
-interface views involved.  An image of the interface can be seen in Figure
-\ref{fig:plastic}.
-
-\begin{figure}
-\centering
-\includegraphics[width=.40\textwidth]{plastic.pdf}
-\caption{drawnTogether version -1.0} \label{fig:plastic}
-\end{figure}
-
-\subsubsection{Interviewees}
-We interviewed the following eight people:
-
-\begin{itemize}
-\item (A) male, an iphone 3G S user
-\item (B) male, a computer science graduate student
-\item (C) female, a person who enjoys drawing
-\item (D) male, an iPhone 3G S user
-\item (E) male, a computer science graduate student
-\item (F) male, a computer science graduate student
-\item (G) male, professional graphic artist and iPhone 3G S user
-\item (H) female, non-technical profession, non-iPhone user
-\end{itemize}
-
-\subsubsection{conducting user study}
-
-Conducting the user study can involve multiple methods.  For our study, we took
-an informal, guided conversational approach to gather the information.  We
-provided a semi-structured questionnaire that our interviewers were to follow.
-
-This questionnaire was divided up into multiple phases.
-
-\subsubsection{ Introduction }
-
-This phase consisted of multiple steps:
-\begin{itemize}
-\item welcome and greetings
-\item gather consent and completion of form
-\item introduce the system in conversational form
-\item communicate goals for this study
-\end{itemize}
-
-This phase was general housekeeping and provided for a welcoming and
-acclimation period between the interviewer and interviewee.  Any general
-questions were encouraged at this point about the general concept, but the
-system had not been officially ``placed in their hands'' yet.
-
-\subsubsection{ Facilitation }
-In order to gather information about usage, we physically handed the users a
-lo-fi representation of the drawnTogether interface in the form of a tangible,
-translucent enclosure with cards that can swap out to represent the varying
-views of the application.  When the user ``navigated'' between the views, the
-interviewer acted as the computer and moved the cards for the user.  The
-benefits of this are numerous, but primarily, it allows us to iteratively
-improve the interface and pilot new versions in a much faster way than
-implementing the changes in software first.
-
-We interviewed multiple individuals (eight total) over a period of three days.
-The first six individuals used the same version of our interface.  The last two
-used a modified version based on feedback gained from earlier interviews.  The
-second version of our application views were very well received, as will be
-seen in the following commentary.
-
-For each interview, we began our questions with handing them the device, then
-asking the following:
-
-\begin{quote}
-Is there anything particularly interesting about the concept of the
-application?
-\end{quote}
-
-Most respondents actually felt the application to be quite interesting.
-Respondent B, however, felt that it's merely a ``funny application'', and
-doubted if there would be enough situations for the system to be used.   He did
-provide one possible  scenario. Imagine a group of architecture students enter
-into one building to make a sketch of the inside structure of this building.
-Each student can find whether the viewer around him or her has been drawn or
-not. If not, he can add his sketch on the screen of the application.  If yes,
-he may ignore it and go to other places to draw or make some correction based
-on others' drawings.  It was interesting to the researchers that even a skeptic
-began to imagine practical, unforeseen collaborative uses.
-
-Following the initial question, we followed with providing four erasable
-markers of differing colors to the interviewee.  We had them ``navigate'' to
-the drawing screen if he or she were on a different screen.  At this point, we
-asked the following:
-\begin{quote}
-Can you draw a simple picture using multiple colors on the screen?
-\end{quote}
-
-With this question, we wanted to gauge the intuitiveness of the interface and
-the user's ability to recognize visual affordances and their mapping to
-intended tasks.  Person A asked ``Can I draw now?  What's the status of my
-pen?''.  Several users touched the settings button before ever trying to draw,
-with the purpose of exploring their options and tools before actually beginning
-any sketch creation.  Person C immediately picked up a random pen (blue) and
-began drawing on the screen.  When asked how they would change colors in the
-application, the response was ``Oh\ldots  the settings page'', to which she
-instantly and easily navigated to the page and chose the blue color.  Again,
-with each navigation, the interviewer acted as the computer and moved the cards
-as requested to transfer the user to different views.  Once in the settings
-page, all users had an apparently clear understanding of how to manipulate the
-current drawing color or erasure.
-
-Multiple users asked about the tagging features visible on the settings page.
-With minimal instruction from our facilitator, users understood the nature.
-One thing was made clear to the developers with these questions, though.  The
-ability to create tags and filter tags on the same view was a little confusing
-and needs to be revisited.  The later revision used by the last two
-interviewees provided a much clearer mapping and helped to eradicate most of
-the confusion.
-
-There were several questions about the appropriate time to tag a drawing or as
-to the origin of the tags used for filtering.  These questions were quite
-helpful in illuminating deficiencies with some of the feedback mechanisms
-around the affordances related to tagging.
-
-One interesting suggestion from multiple users was to add a voting feature for
-a given location's sketches.  This way, a ranking per location could be used to
-sort each location and be communicated on the map also.
-
-Our next question was one which encouraged them to examine the map view, if
-they had not already seen it:
-\begin{quote}
-Please navigate to the map view. {\it [pause for navigation]}
-What pieces of information do you gather from this view?
-\end{quote}
-
-Once on the map, Person G mentioned ``Oh, I can see where other users sketches
-are.  Cool''.  This was very satisfying to the researcher that the primary and
-immediate purpose of the map was summed up so well.  User A asked, ``Can you
-show the actual sketches from different locations on the map? In a pop-up
-window maybe?''  This was an intended addition to the software implementation.
-
-\subsubsection{Interview Completion}
-
-In this phase, we attempted to provide a summary of each person's response and
-to gather further clarification if needed.
-
-We also ended with one final question, intended to spark a free form conversation:
-
-\begin{quote}
-Are there any recommendations you would make to improve your experience?
-\end{quote}
-
-Two individuals suggested moving the color palette from the setting page to the
-bottom of the drawing view.  This would have the effect of drastically reducing
-the interaction required for a meta task of changing the drawing color.  Several
-users changed colors at least twice, so the benefits of this change seem
-beneficial.  For the final two interviews, this change was adopted and proven
-to be a valid enhancement immediately.  Person G used the modified drawing view
-and changed colors five times while creating a sketch.  Person H changed colors
-four times.  This was a definite, measurable improvement and allowed for a more
-refined workflow for task completion.
-
-The sacrifice of reduced drawing area was mitigated by removing the top bar
-completely in the drawing view and adding navigational elements to the bottom
-toolbar to allow for access to settings and the map.  This had no visible,
-negative effect on the latter participants in the study on their ability to
-navigate between views.  The changed views can be seen in Figure \ref{fig:chg}.
-
-\begin{figure}
-\centering
-\includegraphics[width=.45\textwidth]{interface.pdf}
-\caption{On the right, we see the modified drawing interface, with the color
-pallete immediately visible at the bottom of the screen.  On the right, the
-original interface requiring navigation away from the sketch to alter colors.}
-\label{fig:chg}
-\end{figure}
-
-Another suggestion, offered by Person A, was to launch the application with the
-map page initially.  Further conversation with the participant on this
-consideration showed several potential benefits of adopting this.
-\begin{itemize}
-\item Participation feedback is immediately communicated by this macro approach
-to making visible the locations containing sketches.  Each sketch becomes just
-one minor data point on the geographical plot.
-\item Users can immediately choose to physically change their location in order
-to either add to an existing drawing or to create something new and unique
-\item Community involvement is augmented by seeing participation.  If each map
-pin is somehow annotated with the sketch age, a visual component could easily
-communicate a temporal nature for each sketch showing which areas could benefit
-from a ``fresh creation''.
-\end{itemize}
-
-Nearly all participants expressed an interest in getting this application for
-their personal use.
-
-\subsection{ User Study 2 }
-
-User Study 2 actually involved a software implementation to the interviewees
+\section{evaluation - User Study 2}
+our participants actually used the application live on a device. User Study 2 actually involved a software implementation to the interviewees
 and allowed them to interact with the application in real time.
 
-\subsubsection{Interviewees}
+\subsection{Interviewees}
 
 \begin{itemize}
 \item (A) male, an iphone 3G S user and graphic designer
@@ -737,7 +541,7 @@ and allowed them to interact with the application in real time.
 \item (E) male, a computer science graduate student and iPhone user
 \end{itemize}
 
-\subsubsection{conducting user study}
+\subsection{conducting user study}
 
 To gather the necessary information, the following tasks were asked of the
 participants.
@@ -790,7 +594,7 @@ Following these rating questions, participants were asked two more enquiries:
 \item Was there anything you particularly enjoyed about the application?
 \end{enumerate}
 
-\subsubsection{Measured Variables}
+\subsection{Measured Variables}
 
 The results can be viewed in Table \ref{tbl:deps}.
 
@@ -819,7 +623,7 @@ implemented for further work.
 Overall, the results were very interesting.  An observation made by the
 interviewer was that when the user study was conducted in a more lackadaisical
 
-\subsubsection{questionnaires}
+\subsection{questionnaires}
 
 Overall, the results from the questionnaires were very enlightening and
 encouraging.   The responses of the scaled questions were quite high, with most
@@ -833,7 +637,7 @@ plausible and is definitely something to look into.  It would be adding a
 feature which trades a bit of complexity for a great deal of empowerment of the
 user.
 
-\subsubsection{conclusion}
+\subsection{conclusion}
 
 The reception from those experiencing the application was excellent and
 exciting.   Participants in the study were quite interested in the working
